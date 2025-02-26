@@ -1,0 +1,111 @@
+--------------------------------------------------------------------------------
+
+
+Top 5 Predicted Performers for GW 6 Season 2024_25
+Generated on: 2025-02-26 21:51:02
+
+
+GK:
+| name                     | team        | prediction_range   |   actual_points |   confidence_score |   price |
+|:-------------------------|:------------|:-------------------|----------------:|-------------------:|--------:|
+| Mark Flekken             | Brentford   | 4.0 (2.6-5.3)      |               2 |               0.59 |    4.50 |
+| Jordan Pickford          | Everton     | 3.9 (2.5-5.2)      |               2 |               0.50 |    4.90 |
+| Arijanet Muric           | Ipswich     | 3.9 (2.5-5.2)      |               1 |               0.59 |    4.40 |
+| Emiliano Martínez Romero | Aston Villa | 3.8 (2.5-5.2)      |               2 |               0.60 |    5.00 |
+| Guglielmo Vicario        | Spurs       | 3.6 (2.2-4.9)      |               6 |               0.55 |    5.00 |
+
+Position Insights (GK):
+- Average Predicted Points: 3.82
+- Average Confidence Score: 0.57
+- Total Actual Points: 13.00
+- Combined Price: £23.8m
+
+Season Statistics for Selected Players (Up to GW5):
+| Name                     |   Games |   Clean Sheets |   Total Saves |   Saves/Game |
+|:-------------------------|--------:|---------------:|--------------:|-------------:|
+| Mark Flekken             |       5 |              0 |            28 |          5.6 |
+| Jordan Pickford          |       5 |              0 |            14 |          2.8 |
+| Arijanet Muric           |       5 |              1 |            12 |          2.4 |
+| Emiliano Martínez Romero |       5 |              0 |            10 |          2.0 |
+| Guglielmo Vicario        |       5 |              1 |            12 |          2.4 |
+
+
+DEF:
+| name               | team      | prediction_range   |   actual_points |   confidence_score |   price |
+|:-------------------|:----------|:-------------------|----------------:|-------------------:|--------:|
+| Riccardo Calafiori | Arsenal   | 4.8 (2.5-7.0)      |               0 |               0.58 |    5.80 |
+| Andrew Robertson   | Liverpool | 4.4 (2.1-6.6)      |               2 |               0.53 |    6.00 |
+| Virgil van Dijk    | Liverpool | 4.1 (1.9-6.4)      |               2 |               0.55 |    6.00 |
+| Ibrahima Konaté    | Liverpool | 4.1 (1.9-6.4)      |               7 |               0.52 |    5.10 |
+| John Stones        | Man City  | 4.0 (1.8-6.2)      |               0 |               0.54 |    5.40 |
+
+Position Insights (DEF):
+- Average Predicted Points: 4.28
+- Average Confidence Score: 0.54
+- Total Actual Points: 11.00
+- Combined Price: £28.3m
+
+Season Statistics for Selected Players (Up to GW5):
+| Name               |   Games |   Clean Sheets |   Goals |   Assists |
+|:-------------------|--------:|---------------:|--------:|----------:|
+| Riccardo Calafiori |       5 |              0 |       1 |         0 |
+| Andrew Robertson   |       5 |              4 |       0 |         0 |
+| Virgil van Dijk    |       5 |              4 |       0 |         0 |
+| Ibrahima Konaté    |       5 |              3 |       0 |         1 |
+| John Stones        |       5 |              0 |       1 |         0 |
+
+
+MID:
+| name          | team      | prediction_range   |   actual_points |   confidence_score |   price |
+|:--------------|:----------|:-------------------|----------------:|-------------------:|--------:|
+| Mohamed Salah | Liverpool | 7.7 (5.5-9.8)      |              10 |               0.51 |   12.70 |
+| Cole Palmer   | Chelsea   | 6.0 (3.9-8.2)      |              25 |               0.47 |   10.60 |
+| Bukayo Saka   | Arsenal   | 5.2 (3.1-7.4)      |               3 |               0.47 |   10.00 |
+| Bryan Mbeumo  | Brentford | 5.0 (2.9-7.2)      |               9 |               0.47 |    7.10 |
+| Luis Díaz     | Liverpool | 4.8 (2.6-6.9)      |               2 |               0.46 |    7.80 |
+
+Position Insights (MID):
+- Average Predicted Points: 5.74
+- Average Confidence Score: 0.48
+- Total Actual Points: 49.00
+- Combined Price: £48.2m
+
+Season Statistics for Selected Players (Up to GW5):
+| Name          |   Games |   Goals |   Assists |   Avg ICT |   Points/Game |
+|:--------------|--------:|--------:|----------:|----------:|--------------:|
+| Mohamed Salah |       5 |       3 |         4 |      13.9 |           9.8 |
+| Cole Palmer   |       5 |       2 |         4 |       8.4 |           7.2 |
+| Bukayo Saka   |       5 |       1 |         5 |      11.0 |           7.0 |
+| Bryan Mbeumo  |       5 |       4 |         0 |       9.7 |           6.8 |
+| Luis Díaz     |       5 |       5 |         1 |      10.7 |          10.2 |
+
+
+FWD:
+| name                     | team        | prediction_range   |   actual_points |   confidence_score |   price |
+|:-------------------------|:------------|:-------------------|----------------:|-------------------:|--------:|
+| Erling Haaland           | Man City    | 8.7 (6.7-10.6)     |               2 |               0.60 |   15.30 |
+| Kai Havertz              | Arsenal     | 5.4 (3.5-7.4)      |               6 |               0.55 |    8.10 |
+| Jhon Durán               | Aston Villa | 4.9 (3.0-6.9)      |               1 |               0.58 |    6.10 |
+| Dominic Solanke-Mitchell | Spurs       | 4.5 (2.6-6.4)      |               6 |               0.50 |    7.50 |
+| Ollie Watkins            | Aston Villa | 4.4 (2.5-6.3)      |              11 |               0.47 |    9.00 |
+
+Position Insights (FWD):
+- Average Predicted Points: 5.58
+- Average Confidence Score: 0.54
+- Total Actual Points: 26.00
+- Combined Price: £46.0m
+
+Season Statistics for Selected Players (Up to GW5):
+| Name                     |   Games |   Goals |   Assists |   Avg ICT |   Points/Game |
+|:-------------------------|--------:|--------:|----------:|----------:|--------------:|
+| Erling Haaland           |       5 |      10 |         0 |      15.2 |          12.6 |
+| Kai Havertz              |       5 |       2 |         1 |       6.8 |           5.2 |
+| Jhon Durán               |       5 |       4 |         0 |       5.0 |           5.0 |
+| Dominic Solanke-Mitchell |       5 |       1 |         0 |       4.2 |           2.0 |
+| Ollie Watkins            |       5 |       3 |         1 |       6.9 |           5.6 |
+
+
+Predicted Gameweek 6 Summary:
+Total Actual Points Across All Positions: 99
+
+--------------------------------------------------------------------------------

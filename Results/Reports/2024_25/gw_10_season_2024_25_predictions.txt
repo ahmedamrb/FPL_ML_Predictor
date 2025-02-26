@@ -1,0 +1,111 @@
+--------------------------------------------------------------------------------
+
+
+Top 5 Predicted Performers for GW 10 Season 2024_25
+Generated on: 2025-02-26 21:51:11
+
+
+GK:
+| name                  | team           | prediction_range   |   actual_points |   confidence_score |   price |
+|:----------------------|:---------------|:-------------------|----------------:|-------------------:|--------:|
+| Aaron Ramsdale        | Southampton    | 4.7 (3.4-6.0)      |               9 |               0.61 |    4.40 |
+| Bernd Leno            | Fulham         | 4.0 (2.7-5.4)      |               2 |               0.62 |    5.00 |
+| Alisson Ramses Becker | Liverpool      | 3.7 (2.3-5.0)      |               0 |               0.50 |    5.40 |
+| Dean Henderson        | Crystal Palace | 3.5 (2.2-4.9)      |               2 |               0.54 |    4.50 |
+| Nick Pope             | Newcastle      | 3.5 (2.1-4.8)      |               5 |               0.57 |    5.00 |
+
+Position Insights (GK):
+- Average Predicted Points: 3.87
+- Average Confidence Score: 0.57
+- Total Actual Points: 18.00
+- Combined Price: £24.3m
+
+Season Statistics for Selected Players (Up to GW9):
+| Name                  |   Games |   Clean Sheets |   Total Saves |   Saves/Game |
+|:----------------------|--------:|---------------:|--------------:|-------------:|
+| Aaron Ramsdale        |       9 |              0 |            29 |          3.2 |
+| Bernd Leno            |       9 |              1 |            29 |          3.2 |
+| Alisson Ramses Becker |       9 |              4 |            15 |          1.7 |
+| Dean Henderson        |       9 |              2 |            30 |          3.3 |
+| Nick Pope             |       9 |              2 |            40 |          4.4 |
+
+
+DEF:
+| name                   | team      | prediction_range   |   actual_points |   confidence_score |   price |
+|:-----------------------|:----------|:-------------------|----------------:|-------------------:|--------:|
+| Trent Alexander-Arnold | Liverpool | 5.6 (3.4-7.9)      |               2 |               0.52 |    7.10 |
+| Rayan Aït-Nouri        | Wolves    | 4.5 (2.3-6.7)      |               1 |               0.52 |    4.50 |
+| Antonee Robinson       | Fulham    | 4.1 (1.9-6.4)      |               6 |               0.55 |    4.70 |
+| Joško Gvardiol         | Man City  | 4.0 (1.8-6.2)      |               7 |               0.49 |    6.10 |
+| Virgil van Dijk        | Liverpool | 3.8 (1.6-6.0)      |               5 |               0.53 |    6.10 |
+
+Position Insights (DEF):
+- Average Predicted Points: 4.41
+- Average Confidence Score: 0.52
+- Total Actual Points: 21.00
+- Combined Price: £28.5m
+
+Season Statistics for Selected Players (Up to GW9):
+| Name                   |   Games |   Clean Sheets |   Goals |   Assists |
+|:-----------------------|--------:|---------------:|--------:|----------:|
+| Trent Alexander-Arnold |       9 |              5 |       0 |         1 |
+| Rayan Aït-Nouri        |       9 |              0 |       3 |         2 |
+| Antonee Robinson       |       9 |              1 |       0 |         2 |
+| Joško Gvardiol         |       9 |              2 |       2 |         0 |
+| Virgil van Dijk        |       9 |              5 |       1 |         0 |
+
+
+MID:
+| name           | team           | prediction_range   |   actual_points |   confidence_score |   price |
+|:---------------|:---------------|:-------------------|----------------:|-------------------:|--------:|
+| Cole Palmer    | Chelsea        | 6.1 (3.9-8.2)      |               3 |               0.48 |   10.90 |
+| Bryan Mbeumo   | Brentford      | 5.3 (3.2-7.5)      |               3 |               0.48 |    7.60 |
+| Eberechi Eze   | Crystal Palace | 5.3 (3.1-7.4)      |               0 |               0.58 |    6.70 |
+| Phil Foden     | Man City       | 5.2 (3.1-7.4)      |               2 |               0.49 |    9.20 |
+| James Maddison | Spurs          | 5.0 (2.8-7.1)      |               6 |               0.49 |    7.60 |
+
+Position Insights (MID):
+- Average Predicted Points: 5.38
+- Average Confidence Score: 0.50
+- Total Actual Points: 14.00
+- Combined Price: £42.0m
+
+Season Statistics for Selected Players (Up to GW9):
+| Name           |   Games |   Goals |   Assists |   Avg ICT |   Points/Game |
+|:---------------|--------:|--------:|----------:|----------:|--------------:|
+| Cole Palmer    |       9 |       7 |         5 |      11.0 |           8.8 |
+| Bryan Mbeumo   |       9 |       8 |         0 |      10.0 |           7.6 |
+| Eberechi Eze   |       9 |       1 |         1 |       7.5 |           3.4 |
+| Phil Foden     |       9 |       0 |         1 |       3.5 |           1.3 |
+| James Maddison |       9 |       2 |         4 |       9.3 |           5.0 |
+
+
+FWD:
+| name                             | team        | prediction_range   |   actual_points |   confidence_score |   price |
+|:---------------------------------|:------------|:-------------------|----------------:|-------------------:|--------:|
+| Erling Haaland                   | Man City    | 13.0 (11.0-14.9)   |               2 |               0.68 |   15.40 |
+| Alexander Isak                   | Newcastle   | 4.5 (2.6-6.4)      |               9 |               0.45 |    8.30 |
+| Dominic Solanke-Mitchell         | Spurs       | 4.5 (2.5-6.4)      |              16 |               0.50 |    7.70 |
+| Cameron Archer                   | Southampton | 3.9 (2.0-5.9)      |               2 |               0.58 |    5.00 |
+| Matheus Santos Carneiro Da Cunha | Wolves      | 3.8 (1.8-5.7)      |               6 |               0.44 |    6.50 |
+
+Position Insights (FWD):
+- Average Predicted Points: 5.92
+- Average Confidence Score: 0.53
+- Total Actual Points: 35.00
+- Combined Price: £42.9m
+
+Season Statistics for Selected Players (Up to GW9):
+| Name                             |   Games |   Goals |   Assists |   Avg ICT |   Points/Game |
+|:---------------------------------|--------:|--------:|----------:|----------:|--------------:|
+| Erling Haaland                   |       9 |      11 |         0 |      11.8 |           8.3 |
+| Alexander Isak                   |       9 |       2 |         1 |       5.1 |           3.0 |
+| Dominic Solanke-Mitchell         |       9 |       2 |         1 |       4.8 |           2.8 |
+| Cameron Archer                   |       9 |       2 |         0 |       3.3 |           2.6 |
+| Matheus Santos Carneiro Da Cunha |       9 |       4 |         0 |       8.0 |           4.6 |
+
+
+Predicted Gameweek 10 Summary:
+Total Actual Points Across All Positions: 88
+
+--------------------------------------------------------------------------------

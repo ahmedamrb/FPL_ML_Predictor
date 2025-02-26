@@ -1,0 +1,777 @@
+import pandas as pd
+import os
+import numpy as np
+from datetime import datetime
+from typing import List, Dict
+import glob
+from pathlib import Path
+from tqdm import tqdm
+import requests
+
+GW_PATH = Path("Data/Raw/GW")
+MERGED_PATH = Path("Data/Merged")
+VALIDATION_PATH = Path("Data/Validation")
+PROCESSED_PATH = Path("Data/Processed")
+
+class DataMerger:
+    
+
+     
+
+    def __init__(self):
+        """
+        Initialize the CSVMerger class.
+        """
+        self.merged_df = None
+
+        if not MERGED_PATH.exists(): MERGED_PATH.mkdir(parents=True, exist_ok=True) 
+        
+    
+
+    def get_gw_files(self) -> List[str]:
+        """
+        Get all CSV files from the specified Google Drive directory.
+
+        Returns:
+            List[str]: List of CSV file paths
+        """
+        # Use glob to get all CSV files in the directory
+        csv_files = glob.glob(os.path.join(GW_PATH, "*.csv"))
+
+        if not csv_files:
+            raise ValueError(f"No CSV files found in {GW_PATH}")
+
+        print(f"Found {len(csv_files)} CSV files: {[os.path.basename(f) for f in csv_files]}")
+        return sorted(csv_files)  # Sort to ensure consistent ordering
+
+    def read_csv_file(self, filepath: str) -> pd.DataFrame:
+        """
+        Read a single CSV file and add season column.
+
+        Args:
+            filepath (str): Path to the CSV file
+
+        Returns:
+            pd.DataFrame: DataFrame with added season column
+        """
+        print(f"Reading file: {os.path.basename(filepath)}")
+        df = pd.read_csv(filepath)
+        # Extract season name from filename
+        season = os.path.splitext(os.path.basename(filepath))[0]
+        df['season'] = season
+        return df
+
+    def merge_files(self) -> pd.DataFrame:
+        """
+        Merge all CSV files from the specified directory into a single DataFrame.
+
+        Returns:
+            pd.DataFrame: Merged DataFrame
+        """
+        csv_files = self.get_gw_files()
+        dataframes = []
+
+        for filepath in csv_files:
+            df = self.read_csv_file(filepath)
+            dataframes.append(df)
+
+         # Concatenate all dataframes
+        self.merged_df = pd.concat(dataframes, axis=0, ignore_index=True)
+
+        # Rename 'total_points' to 'points'
+        self.merged_df = self.merged_df.rename(columns={'total_points': 'points'})
+        print(f"Successfully merged {len(csv_files)} files into a single DataFrame")
+        return self.merged_df
+
+    def save_merged_data(self, output_path: str) -> None:
+        """
+        Save the merged DataFrame to a CSV file.
+
+        Args:
+            output_path (str): Path to save the merged CSV
+        """
+        if self.merged_df is not None:
+            self.merged_df.to_csv(output_path, index=False)
+            print(f"Merged data saved to: {output_path}")
+        else:
+            raise ValueError("No merged data available. Please run merge_files first.")
+        
+    def merge_save_validate_data(self):
+        # Merge all CSV files from the directory
+        merged_df = self.merge_files()
+
+        print("\nData summary:")
+        print(f"Total seasons processed: {merged_df['season'].nunique()}")
+        print(f"Total entries: {len(merged_df)}")
+        print("\nEntries per season:")
+        print(merged_df.groupby('season').size())
+
+        # Save merged data
+        self.save_merged_data(MERGED_PATH  / f"merged_data.csv")
+
+        # Create validator and generate reports
+        validator = DataValidator(merged_df)
+
+        # Save both text and JSON reports
+        validator.save_validation_report(VALIDATION_PATH / f"merger_report.txt", format='txt')
+
+    def merge_teams_fixtures(self, fixtures_path: str, teams_path: str) -> pd.DataFrame:
+        """
+        Process all season data from separate directories for fixtures and teams.
+
+        Args:
+            fixtures_path (str): Path to the directory containing fixture files.
+            teams_path (str): Path to the directory containing team files.
+
+        Returns:
+            pd.DataFrame: Combined DataFrame of all processed seasons.
+        """
+        print("\nGenerating fixtures DataFrame from raw files...")
+        fixture_files = [f for f in os.listdir(fixtures_path) if f.endswith('.csv') and f.startswith('fixtures')]
+        team_files = [f for f in os.listdir(teams_path) if f.endswith('.csv') and f.startswith('teams')]
+
+        season_codes = set(f.replace('fixtures', '').replace('.csv', '') for f in fixture_files)
+        all_seasons_data = []
+
+        for season_code in tqdm(season_codes, desc="Processing seasons"):
+            try:
+                fixture_file_path = os.path.join(fixtures_path, f'fixtures{season_code}.csv')
+                team_file_path = os.path.join(teams_path, f'teams{season_code}.csv')
+
+                if not os.path.exists(team_file_path):
+                    print(f"Team file for season {season_code} not found. Skipping.")
+                    continue
+
+                fixtures_df = pd.read_csv(fixture_file_path)
+                teams_df = pd.read_csv(team_file_path)
+
+                fixtures_df = fixtures_df.dropna(subset=['kickoff_time'])
+
+                season_df = fixtures_df.merge(
+                    teams_df[['id', 'name']],
+                    left_on='team_h',
+                    right_on='id',
+                    how='left'
+                ).merge(
+                    teams_df[['id', 'name']],
+                    left_on='team_a',
+                    right_on='id',
+                    how='left',
+                    suffixes=('_h', '_a')
+                )
+
+                result_df = season_df[[
+                    'kickoff_time', 'name_h', 'name_a', 'team_h_difficulty', 'team_a_difficulty'
+                ]].rename(columns={
+                    'name_h': 'team_h_name',
+                    'name_a': 'team_a_name'
+                })
+
+                result_df['season'] = f'20{season_code.replace("_", "-")}'
+                all_seasons_data.append(result_df)
+                print(f"Successfully processed season {season_code}.")
+
+            except Exception as e:
+                print(f"Error processing season {season_code}: {e}")
+
+        if all_seasons_data:
+            combined_df = pd.concat(all_seasons_data, ignore_index=True)
+            combined_df = combined_df.sort_values(['kickoff_time'])
+            print("Fixtures DataFrame generated successfully.")
+            return combined_df
+        else:
+            print("No data was processed successfully.")
+            return pd.DataFrame()
+        
+class DataValidator:
+    def __init__(self, df: pd.DataFrame):
+        """
+        Initialize the DataValidator class.
+
+        Args:
+            df (pd.DataFrame): DataFrame to validate
+        """
+        self.df = df
+        self.validation_report = {}
+        # Create output directory if it doesn't exist
+        if not VALIDATION_PATH.exists(): VALIDATION_PATH.mkdir(parents=True, exist_ok=True)
+
+    def generate_column_summary(self) -> Dict:
+        """
+        Generate summary statistics for each column.
+
+        Returns:
+            Dict: Dictionary containing column summaries
+        """
+        column_summary = {}
+
+        for column in self.df.columns:
+            summary = {
+                'total_rows': len(self.df),
+                'missing_values': self.df[column].isna().sum(),
+                'missing_percentage': round((self.df[column].isna().sum() / len(self.df)) * 100, 2),
+                'unique_values': self.df[column].nunique(),
+                'dtype': str(self.df[column].dtype)
+            }
+
+            # Add numeric summaries for numeric columns
+            # Use pd.api.types.is_numeric_dtype for numeric checks
+            # and pd.api.types.is_datetime64_any_dtype for datetime checks
+            if pd.api.types.is_numeric_dtype(self.df[column].dtype) or pd.api.types.is_datetime64_any_dtype(self.df[column].dtype):
+                summary.update({
+                    'min': self.df[column].min(),
+                    'max': self.df[column].max(),
+                    # Calculate mean and median only for numeric types
+                    'mean': round(self.df[column].mean(), 2) if pd.api.types.is_numeric_dtype(self.df[column].dtype) else np.nan,
+                    'median': self.df[column].median() if pd.api.types.is_numeric_dtype(self.df[column].dtype) else np.nan,
+                })
+
+            column_summary[column] = summary
+
+        return column_summary
+
+    def analyze_season_differences(self) -> Dict:
+        """
+        Analyze differences between seasons.
+
+        Returns:
+            Dict: Dictionary containing season-wise analysis
+        """
+        season_analysis = {
+            'rows_per_season': self.df['season'].value_counts().to_dict(),
+            'columns_per_season': {},
+            'unique_values_per_season': {}
+        }
+
+        for season in sorted(self.df['season'].unique()):
+            season_df = self.df[self.df['season'] == season]
+            season_analysis['columns_per_season'][season] = list(season_df.columns)
+
+            # Analyze unique values for key columns per season
+            key_columns = ['name', 'team', 'position']
+            season_unique_values = {}
+
+            for col in key_columns:
+                if col in season_df.columns:
+                    season_unique_values[col] = season_df[col].nunique()
+
+            season_analysis['unique_values_per_season'][season] = season_unique_values
+
+        return season_analysis
+
+    def generate_text_report(self) -> str:
+        """
+        Generate a human-readable text validation report.
+
+        Returns:
+            str: Formatted text report
+        """
+        if not self.validation_report:
+            self.validation_report = {
+                'timestamp': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                'total_rows': len(self.df),
+                'total_columns': len(self.df.columns),
+                'column_summary': self.generate_column_summary(),
+                'season_analysis': self.analyze_season_differences()
+            }
+
+        # Build the text report
+        report = []
+        report.append("=" * 80)
+        report.append("FANTASY PREMIER LEAGUE DATA VALIDATION REPORT")
+        report.append("=" * 80)
+        report.append(f"\nReport Generated: {self.validation_report['timestamp']}")
+        report.append(f"Total Rows: {self.validation_report['total_rows']:,}")
+        report.append(f"Total Columns: {self.validation_report['total_columns']}")
+
+        # Season Analysis
+        report.append("\n" + "=" * 80)
+        report.append("SEASON ANALYSIS")
+        report.append("=" * 80)
+
+        season_analysis = self.validation_report['season_analysis']
+        report.append("\nRows per Season:")
+        for season, count in season_analysis['rows_per_season'].items():
+            report.append(f"  {season}: {count:,} rows")
+
+        report.append("\nUnique Values per Season:")
+        for season, values in season_analysis['unique_values_per_season'].items():
+            report.append(f"\n  {season}:")
+            for col, count in values.items():
+                report.append(f"    {col}: {count:,} unique values")
+
+        # Column Analysis
+        report.append("\n" + "=" * 80)
+        report.append("COLUMN ANALYSIS")
+        report.append("=" * 80)
+
+        for column, summary in self.validation_report['column_summary'].items():
+            report.append(f"\nColumn: {column}")
+            report.append(f"  Data Type: {summary['dtype']}")
+            report.append(f"  Missing Values: {summary['missing_values']:,} ({summary['missing_percentage']}%)")
+            report.append(f"  Unique Values: {summary['unique_values']:,}")
+
+            if 'mean' in summary:
+                report.append(f"  Numeric Statistics:")
+                report.append(f"    Min: {summary['min']:,}")
+                report.append(f"    Max: {summary['max']:,}")
+                report.append(f"    Mean: {summary['mean']:,}")
+                report.append(f"    Median: {summary['median']:,}")
+
+        return "\n".join(report)
+
+    def save_validation_report(self, output_path: str, format: str = 'txt') -> None:
+        """
+        Save the validation report to a file.
+
+        Args:
+            output_path (str): Path to save the validation report
+            format (str): Format to save the report ('txt' or 'json')
+        """
+        if format == 'txt':
+            report_text = self.generate_text_report()
+            with open(output_path, 'w') as f:
+                f.write(report_text)
+            print(f"Text validation report saved to: {output_path}")
+        else:
+            import json
+            if not self.validation_report:
+                self.generate_text_report()  # This will populate self.validation_report
+            with open(output_path, 'w') as f:
+                json.dump(self.validation_report, f, indent=4)
+            print(f"JSON validation report saved to: {output_path}")
+
+class DataProcessor:
+
+    def __init__(self):
+        """
+        Initialize the FeatureEngineer class.
+        """
+        self.merged_data = None
+        # Create output directory if it doesn't exist
+        if not PROCESSED_PATH.exists(): PROCESSED_PATH.mkdir(parents=True, exist_ok=True) 
+
+    def load_data(self) -> None:
+        """
+        Load merged data from the specified directory.
+        """
+        print("\nStarting data loading process...")
+
+        merged_data_path = os.path.join(MERGED_PATH, "merged_data.csv")
+
+        print("Loading merged data...")
+        if os.path.exists(merged_data_path):
+            self.merged_data = pd.read_csv(merged_data_path)
+            print(f"Historical data loaded successfully: {self.merged_data.shape[0]:,} rows.")
+        else:
+            raise FileNotFoundError(f"Historical data not found at {merged_data_path}")
+
+    @staticmethod
+    def add_total_points(df: pd.DataFrame) -> pd.DataFrame:
+        """
+        Add cumulative total points for each player by season until the current gameweek.
+
+        Args:
+            df (pd.DataFrame): Input DataFrame
+
+        Returns:
+            pd.DataFrame: DataFrame with total_points column added
+        """
+        print("\nCalculating total points for each player by season...")
+        result_df = df.copy()
+
+        # Sort by season, name, and GW to ensure correct cumulative calculation
+        result_df = result_df.sort_values(['season', 'name', 'GW'])
+
+        # Calculate cumulative points within each season-player group
+        result_df['total_points'] = result_df.groupby(['season', 'name'])['points'].cumsum()
+
+        print("Season Total Points added successfully.")
+        return result_df
+    @staticmethod
+    def add_value_efficiency(df: pd.DataFrame) -> pd.DataFrame:
+        """
+        Add points per million (value efficiency) for each player.
+
+        Args:
+            df (pd.DataFrame): Input DataFrame with total_points column
+
+        Returns:
+            pd.DataFrame: DataFrame with value_efficiency column added
+        """
+        print("\nCalculating value efficiency (points per million)...")
+        result_df = df.copy()
+
+        # Calculate points per million
+        result_df['value_efficiency'] = (result_df['total_points'] / (result_df['value'] / 10)).round(2)
+
+        # Handle division by zero or missing values
+        result_df['value_efficiency'] = result_df['value_efficiency'].replace([np.inf, -np.inf], np.nan)
+
+        print("Value efficiency calculated successfully.")
+        return result_df
+    @staticmethod
+    def add_difficulty(original_df, fixtures_df):
+        """
+        Maps current and next opponent difficulty based on team matches in fixtures.
+
+        Args:
+            original_df (pd.DataFrame): Original DataFrame with player data
+            fixtures_df (pd.DataFrame): DataFrame containing fixture difficulty
+
+        Returns:
+            pd.DataFrame: DataFrame with opponent difficulty columns added
+        """
+        print("\nAdding opponent difficulty information...")
+
+        # Convert kickoff_time to datetime
+        original_df['kickoff_time'] = pd.to_datetime(original_df['kickoff_time'])
+        fixtures_df['kickoff_time'] = pd.to_datetime(fixtures_df['kickoff_time'])
+
+        # Create dictionaries for quick lookups
+        current_difficulty_map = {}
+        next_difficulty_map = {}
+
+        print("Processing fixtures to create difficulty mappings...")
+        for _, fixture in tqdm(fixtures_df.iterrows(), total=len(fixtures_df), desc="Mapping fixtures"):
+            key_home = (fixture['team_h_name'], fixture['kickoff_time'])
+            key_away = (fixture['team_a_name'], fixture['kickoff_time'])
+            current_difficulty_map[key_home] = fixture['team_h_difficulty']
+            current_difficulty_map[key_away] = fixture['team_a_difficulty']
+
+        print("Generating next match difficulties...")
+        team_fixtures = {}
+        for team in pd.concat([fixtures_df['team_h_name'], fixtures_df['team_a_name']]).unique():
+            team_matches = fixtures_df[(fixtures_df['team_h_name'] == team) | (fixtures_df['team_a_name'] == team)]
+            team_fixtures[team] = team_matches.sort_values('kickoff_time')
+
+        for team in tqdm(team_fixtures, desc="Processing next fixtures"):
+            matches = team_fixtures[team]
+            for i in range(len(matches) - 1):
+                current_match = matches.iloc[i]
+                next_match = matches.iloc[i + 1]
+                if team == next_match['team_h_name']:
+                    next_diff = next_match['team_h_difficulty']
+                else:
+                    next_diff = next_match['team_a_difficulty']
+                next_difficulty_map[(team, current_match['kickoff_time'])] = next_diff
+
+        original_df['opponent_difficulty'] = original_df.apply(
+            lambda row: current_difficulty_map.get((row['team'], row['kickoff_time']), 3), axis=1
+        )
+        original_df['next_opp_diff'] = original_df.apply(
+            lambda row: next_difficulty_map.get((row['team'], row['kickoff_time']), 3), axis=1
+        )
+
+        print("Opponent difficulties added successfully.")
+        return original_df
+    
+    @staticmethod
+    def add_double_game_weeks(original_df: pd.DataFrame):
+        fixtures_path = 'Data/Raw/Fixtures' 
+        teams_path = 'Data/Raw/Teams'      
+        # Get all fixture and team files in the specified directories
+        fixture_files = [f for f in os.listdir(fixtures_path) if f.endswith('.csv') and f.startswith('fixtures')]
+        team_files = [f for f in os.listdir(teams_path) if f.endswith('.csv') and f.startswith('teams')]
+
+        # Extract unique season codes from fixture filenames
+        season_codes = set(f.replace('fixtures', '').replace('.csv', '') for f in fixture_files)
+
+        # Initialize an empty DataFrame to store results
+        d_gw_df = pd.DataFrame(columns=['season', 'team'])
+
+        # Process each season
+        for season_code in season_codes:
+
+            # Construct file paths
+            fixture_file_path = os.path.join(fixtures_path, f'fixtures{season_code}.csv')
+            team_file_path = os.path.join(teams_path, f'teams{season_code}.csv')
+
+            # Check if the team file exists
+            if not os.path.exists(team_file_path):
+                print(f"Team file for season {season_code} not found. Skipping.")
+                continue
+
+            # Load fixtures and teams data
+            fixtures_df = pd.read_csv(fixture_file_path)
+            teams_df = pd.read_csv(team_file_path)
+
+            # Drop rows with missing 'kickoff_time' in fixtures
+            fixtures_df = fixtures_df.dropna(subset=['kickoff_time'])
+
+            # Create a mapping dictionary from team ID to team name
+            team_id_to_name = dict(zip(teams_df['id'], teams_df['name']))
+
+            # Map team IDs to team names in the fixtures DataFrame
+            fixtures_df['team_h'] = fixtures_df['team_h'].map(team_id_to_name)
+            fixtures_df['team_a'] = fixtures_df['team_a'].map(team_id_to_name)
+
+            # Group by 'event' (game week) and count matches for each team
+            home_counts = fixtures_df.groupby(['event', 'team_h']).size().reset_index(name='count')
+            away_counts = fixtures_df.groupby(['event', 'team_a']).size().reset_index(name='count')
+
+            # Combine home and away counts
+            home_counts.rename(columns={'team_h': 'team'}, inplace=True)
+            away_counts.rename(columns={'team_a': 'team'}, inplace=True)
+            combined_counts = pd.concat([home_counts, away_counts])
+
+            # Sum the counts for each team per week
+            total_counts = combined_counts.groupby(['event', 'team']).sum().reset_index()
+
+            # Filter for teams with double game weeks (count >= 2)
+            double_game_weeks = total_counts[total_counts['count'] >= 2]
+            # Add 20 to the first part of season code if it's in format '21_22'
+            season_code = '20' + season_code if len(season_code.split('_')[0]) == 2 else season_code
+
+            # Add season code to the results
+            double_game_weeks['season'] = season_code
+
+            # Append results to the main DataFrame
+            d_gw_df = pd.concat([d_gw_df, double_game_weeks[['season', 'event', 'team']]], ignore_index=True)
+
+        # Rename columns for consistency
+        d_gw_df.rename(columns={'event': 'GW'}, inplace=True)
+
+        # Convert 'gw' column to int
+        d_gw_df['GW'] = d_gw_df['GW'].astype(int)
+
+        # Sort the DataFrame by ['season', 'gw', 'team']
+        d_gw_df = d_gw_df.sort_values(by=['season', 'GW', 'team']).reset_index(drop=True)
+
+        # Create results DataFrame from original DataFrame
+        results_df = original_df.copy()
+
+        # Initialize next_is_double_gw column to False
+        results_df['next_is_double_gw'] = False
+
+        # Create a shifted version of the double gameweek information
+        for season in results_df['season'].unique():
+            season_mask = results_df['season'] == season
+            for team in results_df[season_mask]['team'].unique():
+                team_mask = results_df['team'] == team
+                combined_mask = season_mask & team_mask
+                
+                # Get current GWs and shift them to mark next GW
+                current_gws = results_df[combined_mask]['GW']
+                next_double_gws = d_gw_df[(d_gw_df['season'] == season) & 
+                                        (d_gw_df['team'] == team)]['GW'].values
+                
+                # Mark next gameweek as double
+                for gw in current_gws:
+                    if gw + 1 in next_double_gws:
+                        results_df.loc[combined_mask & (results_df['GW'] == gw), 'next_is_double_gw'] = True
+
+        return results_df
+    
+    @staticmethod
+    def add_next_is_home(original_df: pd.DataFrame):
+        """
+        Add a boolean column indicating if the next game week is a home game.
+        Uses FPL API to fill missing values for the latest GW of the current season.
+        """
+        print("\nAdding next home game information...")
+        results_df = original_df.copy()
+        
+        # Initialize next_is_home column to False
+        results_df['next_is_home'] = False
+
+        # Process each season and team combination
+        for season in results_df['season'].unique():
+            season_mask = results_df['season'] == season
+            for team in results_df[season_mask]['team'].unique():
+                team_mask = results_df['team'] == team
+                combined_mask = season_mask & team_mask
+                
+                # Get data for this team and season, sorted by GW
+                team_data = results_df[combined_mask].sort_values('GW')
+                
+                # Shift the was_home column up by 1 to get next game's home status
+                next_home = team_data['was_home'].shift(-1)
+                
+                # Update the next_is_home column
+                results_df.loc[team_data.index, 'next_is_home'] = next_home
+
+        # --- NEW CODE TO HANDLE LATEST GW USING FPL API ---
+        # Identify rows with NaN in next_is_home
+        nan_mask = results_df['next_is_home'].isna()
+        if nan_mask.any():
+            print("Fetching future fixtures from FPL API for NaN entries...")
+            
+            # Get latest season and GW in the data
+            latest_season = results_df['season'].max()
+            latest_gw = results_df[results_df['season'] == latest_season]['GW'].max()
+
+            try:
+                # Fetch team ID mapping from FPL API
+                bootstrap_url = "https://fantasy.premierleague.com/api/bootstrap-static/"
+                response = requests.get(bootstrap_url).json()
+                teams_data = response['teams']
+                team_name_to_id = {team['name']: team['id'] for team in teams_data}
+
+                # Fetch all fixtures from FPL API
+                fixtures_url = "https://fantasy.premierleague.com/api/fixtures/"
+                fixtures_response = requests.get(fixtures_url).json()
+                fixtures_df = pd.DataFrame(fixtures_response)
+                fixtures_df['kickoff_time'] = pd.to_datetime(fixtures_df['kickoff_time'])
+
+                # Process only NaN rows from latest season's latest GW
+                nan_rows = results_df[(results_df['season'] == latest_season) & 
+                                    (results_df['GW'] == latest_gw) & 
+                                    nan_mask]
+
+                for idx, row in nan_rows.iterrows():
+                    team_name = row['team']
+                    team_id = team_name_to_id.get(team_name)
+                    
+                    if not team_id:
+                        print(f"Team '{team_name}' not found in FPL API. Skipping.")
+                        continue
+
+                    # Find next fixture after this row's kickoff_time
+                    latest_kickoff = pd.to_datetime(row['kickoff_time'])
+                    team_fixtures = fixtures_df[
+                        ((fixtures_df['team_h'] == team_id) | (fixtures_df['team_a'] == team_id)) &
+                        (fixtures_df['kickoff_time'] > latest_kickoff)
+                    ].sort_values('kickoff_time')
+
+                    if not team_fixtures.empty:
+                        next_fixture = team_fixtures.iloc[0]
+                        is_home = next_fixture['team_h'] == team_id
+                        # Use loc to update the DataFrame
+                        results_df.loc[idx, 'next_is_home'] = is_home
+                        print(f"Updated {team_name} (GW{latest_gw+1}): Home = {is_home}")
+                    else:
+                        print(f"No future fixtures found for {team_name} in {latest_season}")
+
+            except Exception as e:
+                print(f"Error fetching FPL data: {e}. NaN values may remain.")
+
+        print("Next home game information added successfully.")
+        print(results_df['next_is_home'].isna().sum())
+        return results_df
+    
+    @staticmethod
+    def add_next_minutes(original_df: pd.DataFrame):
+        """
+        Add next gameweek's minutes. For the latest gameweek, attempts to fetch from FPL API.
+        """
+        print("\nAdding next minutes information...")
+        results_df = original_df.copy()
+        
+        # Initialize next_minutes column
+        results_df['next_minutes'] = None
+        
+        # Process each season and team combination
+        for season in results_df['season'].unique():
+            season_mask = results_df['season'] == season
+            for team in results_df[season_mask]['team'].unique():
+                team_mask = results_df['team'] == team
+                combined_mask = season_mask & team_mask
+                
+                # Get data for this team and season, sorted by GW
+                team_data = results_df[combined_mask].sort_values('GW')
+                
+                # Shift the minutes column up by 1 to get next game's minutes
+                next_mins = team_data['minutes'].shift(-1)
+                
+                # Update the next_minutes column
+                results_df.loc[team_data.index, 'next_minutes'] = next_mins
+
+        # Handle latest GW using FPL API
+        # Get latest season and GW
+        latest_season = results_df['season'].max()
+        latest_gw = results_df[results_df['season'] == latest_season]['GW'].max()
+
+        # Identify rows needing API data
+        nan_mask = results_df['next_minutes'].isna()
+        latest_gw_mask = (results_df['season'] == latest_season) & (results_df['GW'] == latest_gw)
+        
+        if nan_mask.any() and latest_gw_mask.any():
+            print("Fetching next gameweek minutes from FPL API...")
+            try:
+                # Get current GW from bootstrap-static
+                bootstrap_url = "https://fantasy.premierleague.com/api/bootstrap-static/"
+                bootstrap_data = requests.get(bootstrap_url).json()
+                
+                # Get player mapping
+                players = {p['web_name']: p['id'] for p in bootstrap_data['elements']}
+                
+                # Get the rows that need updating
+                update_rows = results_df[latest_gw_mask & nan_mask]
+                
+                for idx, row in update_rows.iterrows():
+                    player_name = row['name']
+                    if player_name in players:
+                        player_id = players[player_name]
+                        # Get player's latest GW data
+                        player_url = f"https://fantasy.premierleague.com/api/element-summary/{player_id}/"
+                        player_data = requests.get(player_url).json()
+                        
+                        if 'history' in player_data and player_data['history']:
+                            latest_data = sorted(player_data['history'], key=lambda x: x['round'])[-1]
+                            if latest_data['round'] > latest_gw:  # Only update if we have newer data
+                                results_df.loc[idx, 'next_minutes'] = latest_data['minutes']
+                                print(f"Updated next minutes for {player_name}")
+
+            except Exception as e:
+                print(f"Error fetching FPL data: {e}")
+
+        print("Next minutes information added successfully.")
+        return results_df
+
+    def process_data(self):
+        """
+        Process merged data with new features.
+
+        Returns:
+            processed DataFrame
+        """
+        print("\nLoading Merged Data...")
+
+        if self.merged_data is None:
+            self.load_data()
+
+        print("\nGenerating fixtures_difficulty DataFrame...")
+        fixtures_difficulty_df = DataMerger().merge_teams_fixtures('Data/Raw/fixtures', 'Data/Raw/teams')
+
+        print("\nData summary:")
+        print(f"Total seasons processed: {fixtures_difficulty_df['season'].nunique()}")
+        print(f"Total matches: {len(fixtures_difficulty_df)}")
+        print("\nMatches per season:")
+        print(fixtures_difficulty_df.groupby('season').size())
+
+        print("\nProcessing adding columns data...")
+        processed_merged_data = self.merged_data.pipe(self.add_total_points)
+        processed_merged_data['position'] = processed_merged_data['position'].replace('GKP', 'GK')
+        processed_merged_data = self.add_value_efficiency(processed_merged_data)
+        processed_merged_data = self.add_difficulty(processed_merged_data, fixtures_difficulty_df)
+        processed_merged_data = self.add_double_game_weeks(processed_merged_data)
+        #processed_merged_data = self.add_next_is_home(processed_merged_data)
+        #processed_merged_data = self.add_next_minutes(processed_merged_data)
+
+
+        print("\nData processing completed.")
+        #print("\nDisplaying double game week matches:")
+        #print(processed_merged_data[processed_merged_data['is_double_gw']][['name', 'position', 'team', 'season', 'GW', 'is_double_gw']].head())
+
+
+        print("\nSaving processed data...")    
+        # Save Processed data
+        processed_merged_output_path = PROCESSED_PATH / "processed_data.csv"
+        processed_merged_data.to_csv(processed_merged_output_path, index=False)
+        print(f"Processed merged data saved to {processed_merged_output_path}")
+
+        # Create validator and generate reports
+        validator = DataValidator(processed_merged_data)
+
+        # Save Processed Validation text
+        validator.save_validation_report(VALIDATION_PATH / f"processing_report.txt", format='txt')
+
+        print("Data saved successfully.")
+    
+        return
+    
+# Example usage
+if __name__ == "__main__":
+    data_processor = DataProcessor()
+    data_processor.process_data()

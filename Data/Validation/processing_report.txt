@@ -1,0 +1,544 @@
+================================================================================
+FANTASY PREMIER LEAGUE DATA VALIDATION REPORT
+================================================================================
+
+Report Generated: 2025-02-26 20:16:25
+Total Rows: 117,720
+Total Columns: 52
+
+================================================================================
+SEASON ANALYSIS
+================================================================================
+
+Rows per Season:
+  2023_24: 28,742 rows
+  2022_23: 24,922 rows
+  2021_22: 23,194 rows
+  2020_21: 22,875 rows
+  2024_25: 17,987 rows
+
+Unique Values per Season:
+
+  2020_21:
+    name: 712 unique values
+    team: 20 unique values
+    position: 4 unique values
+
+  2021_22:
+    name: 735 unique values
+    team: 20 unique values
+    position: 4 unique values
+
+  2022_23:
+    name: 777 unique values
+    team: 20 unique values
+    position: 4 unique values
+
+  2023_24:
+    name: 869 unique values
+    team: 20 unique values
+    position: 4 unique values
+
+  2024_25:
+    name: 783 unique values
+    team: 20 unique values
+    position: 5 unique values
+
+================================================================================
+COLUMN ANALYSIS
+================================================================================
+
+Column: name
+  Data Type: object
+  Missing Values: 0 (0.0%)
+  Unique Values: 1,846
+
+Column: position
+  Data Type: object
+  Missing Values: 0 (0.0%)
+  Unique Values: 5
+
+Column: team
+  Data Type: object
+  Missing Values: 0 (0.0%)
+  Unique Values: 27
+
+Column: xP
+  Data Type: float64
+  Missing Values: 0 (0.0%)
+  Unique Values: 275
+  Numeric Statistics:
+    Min: -4.0
+    Max: 52.8
+    Mean: 1.29
+    Median: 0.3
+
+Column: assists
+  Data Type: int64
+  Missing Values: 0 (0.0%)
+  Unique Values: 5
+  Numeric Statistics:
+    Min: 0
+    Max: 4
+    Mean: 0.04
+    Median: 0.0
+
+Column: bonus
+  Data Type: int64
+  Missing Values: 0 (0.0%)
+  Unique Values: 7
+  Numeric Statistics:
+    Min: 0
+    Max: 6
+    Mean: 0.1
+    Median: 0.0
+
+Column: bps
+  Data Type: int64
+  Missing Values: 0 (0.0%)
+  Unique Values: 122
+  Numeric Statistics:
+    Min: -25
+    Max: 128
+    Mean: 5.43
+    Median: 0.0
+
+Column: clean_sheets
+  Data Type: int64
+  Missing Values: 0 (0.0%)
+  Unique Values: 3
+  Numeric Statistics:
+    Min: 0
+    Max: 2
+    Mean: 0.09
+    Median: 0.0
+
+Column: creativity
+  Data Type: float64
+  Missing Values: 0 (0.0%)
+  Unique Values: 1,131
+  Numeric Statistics:
+    Min: 0.0
+    Max: 181.8
+    Mean: 4.43
+    Median: 0.0
+
+Column: element
+  Data Type: int64
+  Missing Values: 0 (0.0%)
+  Unique Values: 866
+  Numeric Statistics:
+    Min: 1
+    Max: 866
+    Mean: 352.45
+    Median: 350.0
+
+Column: fixture
+  Data Type: float64
+  Missing Values: 6,403 (5.44%)
+  Unique Values: 380
+  Numeric Statistics:
+    Min: 1.0
+    Max: 380.0
+    Mean: 182.83
+    Median: 180.0
+
+Column: goals_conceded
+  Data Type: int64
+  Missing Values: 0 (0.0%)
+  Unique Values: 11
+  Numeric Statistics:
+    Min: 0
+    Max: 10
+    Mean: 0.49
+    Median: 0.0
+
+Column: goals_scored
+  Data Type: int64
+  Missing Values: 0 (0.0%)
+  Unique Values: 5
+  Numeric Statistics:
+    Min: 0
+    Max: 4
+    Mean: 0.04
+    Median: 0.0
+
+Column: ict_index
+  Data Type: float64
+  Missing Values: 0 (0.0%)
+  Unique Values: 407
+  Numeric Statistics:
+    Min: 0.0
+    Max: 42.599999999999994
+    Mean: 1.56
+    Median: 0.0
+
+Column: influence
+  Data Type: float64
+  Missing Values: 0 (0.0%)
+  Unique Values: 731
+  Numeric Statistics:
+    Min: 0.0
+    Max: 164.8
+    Mean: 6.61
+    Median: 0.0
+
+Column: kickoff_time
+  Data Type: datetime64[ns, UTC]
+  Missing Values: 0 (0.0%)
+  Unique Values: 1,116
+  Numeric Statistics:
+    Min: ,
+    Max: ,
+    Mean: nan
+    Median: nan
+
+Column: minutes
+  Data Type: int64
+  Missing Values: 0 (0.0%)
+  Unique Values: 183
+  Numeric Statistics:
+    Min: 0
+    Max: 204
+    Mean: 29.82
+    Median: 0.0
+
+Column: opponent_team
+  Data Type: int64
+  Missing Values: 0 (0.0%)
+  Unique Values: 20
+  Numeric Statistics:
+    Min: 1
+    Max: 20
+    Mean: 10.52
+    Median: 11.0
+
+Column: own_goals
+  Data Type: int64
+  Missing Values: 0 (0.0%)
+  Unique Values: 3
+  Numeric Statistics:
+    Min: 0
+    Max: 2
+    Mean: 0.0
+    Median: 0.0
+
+Column: penalties_missed
+  Data Type: int64
+  Missing Values: 0 (0.0%)
+  Unique Values: 2
+  Numeric Statistics:
+    Min: 0
+    Max: 1
+    Mean: 0.0
+    Median: 0.0
+
+Column: penalties_saved
+  Data Type: int64
+  Missing Values: 0 (0.0%)
+  Unique Values: 2
+  Numeric Statistics:
+    Min: 0
+    Max: 1
+    Mean: 0.0
+    Median: 0.0
+
+Column: red_cards
+  Data Type: int64
+  Missing Values: 0 (0.0%)
+  Unique Values: 2
+  Numeric Statistics:
+    Min: 0
+    Max: 1
+    Mean: 0.0
+    Median: 0.0
+
+Column: round
+  Data Type: float64
+  Missing Values: 6,403 (5.44%)
+  Unique Values: 38
+  Numeric Statistics:
+    Min: 1.0
+    Max: 38.0
+    Mean: 18.79
+    Median: 18.0
+
+Column: saves
+  Data Type: int64
+  Missing Values: 0 (0.0%)
+  Unique Values: 16
+  Numeric Statistics:
+    Min: 0
+    Max: 15
+    Mean: 0.09
+    Median: 0.0
+
+Column: selected
+  Data Type: float64
+  Missing Values: 0 (0.0%)
+  Unique Values: 69,960
+  Numeric Statistics:
+    Min: 0.0
+    Max: 9,582,624.0
+    Mean: 207,233.66
+    Median: 19,816.0
+
+Column: team_a_score
+  Data Type: float64
+  Missing Values: 6,403 (5.44%)
+  Unique Values: 9
+  Numeric Statistics:
+    Min: 0.0
+    Max: 8.0
+    Mean: 1.38
+    Median: 1.0
+
+Column: team_h_score
+  Data Type: float64
+  Missing Values: 6,403 (5.44%)
+  Unique Values: 9
+  Numeric Statistics:
+    Min: 0.0
+    Max: 9.0
+    Mean: 1.59
+    Median: 1.0
+
+Column: threat
+  Data Type: float64
+  Missing Values: 0 (0.0%)
+  Unique Values: 153
+  Numeric Statistics:
+    Min: 0.0
+    Max: 198.0
+    Mean: 4.61
+    Median: 0.0
+
+Column: points
+  Data Type: int64
+  Missing Values: 0 (0.0%)
+  Unique Values: 37
+  Numeric Statistics:
+    Min: -7
+    Max: 30
+    Mean: 1.26
+    Median: 0.0
+
+Column: transfers_balance
+  Data Type: float64
+  Missing Values: 0 (0.0%)
+  Unique Values: 34,124
+  Numeric Statistics:
+    Min: -2,741,008.0
+    Max: 1,983,733.0
+    Mean: 645.71
+    Median: -61.0
+
+Column: transfers_in
+  Data Type: float64
+  Missing Values: 0 (0.0%)
+  Unique Values: 26,160
+  Numeric Statistics:
+    Min: 0.0
+    Max: 2,104,464.0
+    Mean: 14,564.59
+    Median: 317.0
+
+Column: transfers_out
+  Data Type: float64
+  Missing Values: 0 (0.0%)
+  Unique Values: 29,286
+  Numeric Statistics:
+    Min: 0.0
+    Max: 2,766,073.0
+    Mean: 13,918.52
+    Median: 840.0
+
+Column: value
+  Data Type: float64
+  Missing Values: 0 (0.0%)
+  Unique Values: 130
+  Numeric Statistics:
+    Min: 5.0
+    Max: 154.0
+    Mean: 49.72
+    Median: 46.0
+
+Column: was_home
+  Data Type: bool
+  Missing Values: 0 (0.0%)
+  Unique Values: 2
+  Numeric Statistics:
+    Min: 0
+    Max: 1
+    Mean: 0.5
+    Median: 0.0
+
+Column: yellow_cards
+  Data Type: int64
+  Missing Values: 0 (0.0%)
+  Unique Values: 3
+  Numeric Statistics:
+    Min: 0
+    Max: 2
+    Mean: 0.05
+    Median: 0.0
+
+Column: GW
+  Data Type: int64
+  Missing Values: 0 (0.0%)
+  Unique Values: 38
+  Numeric Statistics:
+    Min: 1
+    Max: 38
+    Mean: 19.33
+    Median: 19.0
+
+Column: season
+  Data Type: object
+  Missing Values: 0 (0.0%)
+  Unique Values: 5
+
+Column: expected_assists
+  Data Type: float64
+  Missing Values: 48,779 (41.44%)
+  Unique Values: 1,465
+  Numeric Statistics:
+    Min: 0.0
+    Max: 1.47
+    Mean: 0.02
+    Median: 0.0
+
+Column: expected_goal_involvements
+  Data Type: float64
+  Missing Values: 48,779 (41.44%)
+  Unique Values: 1,678
+  Numeric Statistics:
+    Min: 0.0
+    Max: 3.88
+    Mean: 0.06
+    Median: 0.0
+
+Column: expected_goals
+  Data Type: float64
+  Missing Values: 48,779 (41.44%)
+  Unique Values: 856
+  Numeric Statistics:
+    Min: 0.0
+    Max: 2.77
+    Mean: 0.04
+    Median: 0.0
+
+Column: expected_goals_conceded
+  Data Type: float64
+  Missing Values: 48,779 (41.44%)
+  Unique Values: 941
+  Numeric Statistics:
+    Min: 0.0
+    Max: 9.84
+    Mean: 0.39
+    Median: 0.0
+
+Column: starts
+  Data Type: float64
+  Missing Values: 48,779 (41.44%)
+  Unique Values: 2
+  Numeric Statistics:
+    Min: 0.0
+    Max: 1.0
+    Mean: 0.26
+    Median: 0.0
+
+Column: modified
+  Data Type: object
+  Missing Values: 99,881 (84.85%)
+  Unique Values: 1
+
+Column: is_double_gw
+  Data Type: bool
+  Missing Values: 0 (0.0%)
+  Unique Values: 2
+  Numeric Statistics:
+    Min: 0
+    Max: 1
+    Mean: 0.05
+    Median: 0.0
+
+Column: dgw_factor
+  Data Type: int64
+  Missing Values: 0 (0.0%)
+  Unique Values: 2
+  Numeric Statistics:
+    Min: 1
+    Max: 2
+    Mean: 1.05
+    Median: 1.0
+
+Column: total_points
+  Data Type: int64
+  Missing Values: 0 (0.0%)
+  Unique Values: 260
+  Numeric Statistics:
+    Min: -4
+    Max: 285
+    Mean: 21.55
+    Median: 7.0
+
+Column: value_efficiency
+  Data Type: float64
+  Missing Values: 0 (0.0%)
+  Unique Values: 2,541
+  Numeric Statistics:
+    Min: -1.0
+    Max: 108.0
+    Mean: 4.01
+    Median: 1.43
+
+Column: opponent_difficulty
+  Data Type: int64
+  Missing Values: 0 (0.0%)
+  Unique Values: 4
+  Numeric Statistics:
+    Min: 2
+    Max: 5
+    Mean: 2.88
+    Median: 3.0
+
+Column: next_opp_diff
+  Data Type: int64
+  Missing Values: 0 (0.0%)
+  Unique Values: 4
+  Numeric Statistics:
+    Min: 2
+    Max: 5
+    Mean: 2.9
+    Median: 3.0
+
+Column: next_is_double_gw
+  Data Type: bool
+  Missing Values: 0 (0.0%)
+  Unique Values: 2
+  Numeric Statistics:
+    Min: 0
+    Max: 1
+    Mean: 0.05
+    Median: 0.0
+
+Column: next_is_home
+  Data Type: bool
+  Missing Values: 0 (0.0%)
+  Unique Values: 2
+  Numeric Statistics:
+    Min: 0
+    Max: 1
+    Mean: 0.49
+    Median: 0.0
+
+Column: next_minutes
+  Data Type: int64
+  Missing Values: 0 (0.0%)
+  Unique Values: 183
+  Numeric Statistics:
+    Min: 0
+    Max: 204
+    Mean: 28.92
+    Median: 0.0

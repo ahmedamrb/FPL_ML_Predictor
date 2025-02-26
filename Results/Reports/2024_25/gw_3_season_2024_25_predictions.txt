@@ -1,0 +1,111 @@
+--------------------------------------------------------------------------------
+
+
+Top 5 Predicted Performers for GW 3 Season 2024_25
+Generated on: 2025-02-26 21:50:54
+
+
+GK:
+| name                     | team        | prediction_range   |   actual_points |   confidence_score |   price |
+|:-------------------------|:------------|:-------------------|----------------:|-------------------:|--------:|
+| David Raya Martin        | Arsenal     | 4.8 (3.5-6.2)      |               2 |               0.59 |    5.50 |
+| Robert Sánchez           | Chelsea     | 4.7 (3.4-6.1)      |               2 |               0.55 |    4.50 |
+| Emiliano Martínez Romero | Aston Villa | 4.2 (2.9-5.6)      |               2 |               0.62 |    5.00 |
+| Norberto Murara Neto     | Bournemouth | 4.1 (2.8-5.4)      |               0 |               0.71 |    4.50 |
+| Mark Flekken             | Brentford   | 4.1 (2.7-5.4)      |               3 |               0.60 |    4.50 |
+
+Position Insights (GK):
+- Average Predicted Points: 4.39
+- Average Confidence Score: 0.61
+- Total Actual Points: 9.00
+- Combined Price: £24.0m
+
+Season Statistics for Selected Players (Up to GW2):
+| Name                     |   Games |   Clean Sheets |   Total Saves |   Saves/Game |
+|:-------------------------|--------:|---------------:|--------------:|-------------:|
+| David Raya Martin        |       2 |              2 |             6 |          3.0 |
+| Robert Sánchez           |       2 |              0 |             5 |          2.5 |
+| Emiliano Martínez Romero |       2 |              0 |             5 |          2.5 |
+| Norberto Murara Neto     |       2 |              0 |            11 |          5.5 |
+| Mark Flekken             |       2 |              0 |            12 |          6.0 |
+
+
+DEF:
+| name                   | team      | prediction_range   |   actual_points |   confidence_score |   price |
+|:-----------------------|:----------|:-------------------|----------------:|-------------------:|--------:|
+| Trent Alexander-Arnold | Liverpool | 4.9 (2.7-7.2)      |               6 |               0.49 |    7.00 |
+| Benjamin White         | Arsenal   | 4.8 (2.6-7.1)      |               2 |               0.60 |    6.50 |
+| Joško Gvardiol         | Man City  | 4.4 (2.1-6.6)      |               2 |               0.51 |    6.00 |
+| Virgil van Dijk        | Liverpool | 3.8 (1.6-6.1)      |               5 |               0.53 |    6.00 |
+| William Saliba         | Arsenal   | 3.8 (1.6-6.1)      |               2 |               0.46 |    6.00 |
+
+Position Insights (DEF):
+- Average Predicted Points: 4.36
+- Average Confidence Score: 0.52
+- Total Actual Points: 17.00
+- Combined Price: £31.5m
+
+Season Statistics for Selected Players (Up to GW2):
+| Name                   |   Games |   Clean Sheets |   Goals |   Assists |
+|:-----------------------|--------:|---------------:|--------:|----------:|
+| Trent Alexander-Arnold |       2 |              2 |       0 |         0 |
+| Benjamin White         |       2 |              2 |       0 |         0 |
+| Joško Gvardiol         |       2 |              1 |       0 |         0 |
+| Virgil van Dijk        |       2 |              2 |       0 |         0 |
+| William Saliba         |       2 |              2 |       0 |         0 |
+
+
+MID:
+| name                                | team          | prediction_range   |   actual_points |   confidence_score |   price |
+|:------------------------------------|:--------------|:-------------------|----------------:|-------------------:|--------:|
+| Bukayo Saka                         | Arsenal       | 6.1 (4.0-8.3)      |               6 |               0.50 |   10.00 |
+| Callum Hudson-Odoi                  | Nott'm Forest | 6.1 (3.9-8.2)      |               2 |               0.62 |    5.50 |
+| Mohamed Salah                       | Liverpool     | 5.4 (3.3-7.6)      |              17 |               0.44 |   12.50 |
+| Bernardo Veiga de Carvalho e Silva  | Man City      | 5.3 (3.1-7.4)      |               7 |               0.60 |    6.60 |
+| Sávio 'Savinho' Moreira de Oliveira | Man City      | 5.2 (3.1-7.4)      |               0 |               0.53 |    6.50 |
+
+Position Insights (MID):
+- Average Predicted Points: 5.63
+- Average Confidence Score: 0.54
+- Total Actual Points: 32.00
+- Combined Price: £41.1m
+
+Season Statistics for Selected Players (Up to GW2):
+| Name                                |   Games |   Goals |   Assists |   Avg ICT |   Points/Game |
+|:------------------------------------|--------:|--------:|----------:|----------:|--------------:|
+| Bukayo Saka                         |       2 |       1 |         2 |      14.3 |           9.0 |
+| Callum Hudson-Odoi                  |       2 |       0 |         0 |       8.9 |           3.0 |
+| Mohamed Salah                       |       2 |       2 |         1 |      12.4 |          12.0 |
+| Bernardo Veiga de Carvalho e Silva  |       2 |       0 |         1 |       6.4 |           4.0 |
+| Sávio 'Savinho' Moreira de Oliveira |       2 |       0 |         2 |       6.4 |           5.0 |
+
+
+FWD:
+| name                          | team           | prediction_range   |   actual_points |   confidence_score |   price |
+|:------------------------------|:---------------|:-------------------|----------------:|-------------------:|--------:|
+| Erling Haaland                | Man City       | 8.6 (6.7-10.5)     |              17 |               0.60 |   15.00 |
+| Jean-Philippe Mateta          | Crystal Palace | 6.2 (4.2-8.1)      |               2 |               0.56 |    7.50 |
+| Alexander Isak                | Newcastle      | 6.1 (4.1-8.0)      |               9 |               0.51 |    8.50 |
+| Rodrigo Muniz Carvalho        | Fulham         | 5.6 (3.6-7.5)      |               2 |               0.63 |    6.10 |
+| João Pedro Junqueira de Jesus | Brighton       | 3.5 (1.6-5.5)      |               8 |               0.44 |    5.50 |
+
+Position Insights (FWD):
+- Average Predicted Points: 5.99
+- Average Confidence Score: 0.55
+- Total Actual Points: 38.00
+- Combined Price: £42.6m
+
+Season Statistics for Selected Players (Up to GW2):
+| Name                          |   Games |   Goals |   Assists |   Avg ICT |   Points/Game |
+|:------------------------------|--------:|--------:|----------:|----------:|--------------:|
+| Erling Haaland                |       2 |       4 |         0 |      13.0 |          12.0 |
+| Jean-Philippe Mateta          |       2 |       0 |         0 |       2.2 |           1.5 |
+| Alexander Isak                |       2 |       0 |         1 |       5.4 |           3.5 |
+| Rodrigo Muniz Carvalho        |       2 |       0 |         0 |       7.9 |           2.0 |
+| João Pedro Junqueira de Jesus |       2 |       1 |         0 |       6.9 |           5.0 |
+
+
+Predicted Gameweek 3 Summary:
+Total Actual Points Across All Positions: 96
+
+--------------------------------------------------------------------------------

@@ -1,0 +1,111 @@
+--------------------------------------------------------------------------------
+
+
+Top 5 Predicted Performers for GW 5 Season 2024_25
+Generated on: 2025-02-26 21:50:59
+
+
+GK:
+| name              | team          | prediction_range   |   actual_points |   confidence_score |   price |
+|:------------------|:--------------|:-------------------|----------------:|-------------------:|--------:|
+| David Raya Martin | Arsenal       | 4.6 (3.2-5.9)      |               4 |               0.58 |    5.50 |
+| Jordan Pickford   | Everton       | 4.4 (3.1-5.7)      |               2 |               0.52 |    4.90 |
+| Matz Sels         | Nott'm Forest | 3.7 (2.3-5.0)      |               1 |               0.53 |    4.50 |
+| Aaron Ramsdale    | Southampton   | 3.6 (2.3-5.0)      |               3 |               0.56 |    4.40 |
+| Mark Flekken      | Brentford     | 3.4 (2.0-4.7)      |               3 |               0.56 |    4.50 |
+
+Position Insights (GK):
+- Average Predicted Points: 3.92
+- Average Confidence Score: 0.55
+- Total Actual Points: 13.00
+- Combined Price: £23.8m
+
+Season Statistics for Selected Players (Up to GW4):
+| Name              |   Games |   Clean Sheets |   Total Saves |   Saves/Game |
+|:------------------|--------:|---------------:|--------------:|-------------:|
+| David Raya Martin |       4 |              3 |            14 |          3.5 |
+| Jordan Pickford   |       4 |              0 |            13 |          3.2 |
+| Matz Sels         |       4 |              2 |            10 |          2.5 |
+| Aaron Ramsdale    |       4 |              0 |            11 |          2.8 |
+| Mark Flekken      |       4 |              0 |            22 |          5.5 |
+
+
+DEF:
+| name                   | team      | prediction_range   |   actual_points |   confidence_score |   price |
+|:-----------------------|:----------|:-------------------|----------------:|-------------------:|--------:|
+| Virgil van Dijk        | Liverpool | 5.7 (3.5-8.0)      |               6 |               0.61 |    6.00 |
+| Trent Alexander-Arnold | Liverpool | 5.7 (3.5-7.9)      |              11 |               0.53 |    7.00 |
+| Benjamin White         | Arsenal   | 4.5 (2.2-6.7)      |               1 |               0.59 |    6.50 |
+| Andrew Robertson       | Liverpool | 4.0 (1.8-6.3)      |               6 |               0.52 |    6.00 |
+| Cristian Romero        | Spurs     | 4.0 (1.8-6.2)      |               2 |               0.52 |    5.10 |
+
+Position Insights (DEF):
+- Average Predicted Points: 4.79
+- Average Confidence Score: 0.55
+- Total Actual Points: 26.00
+- Combined Price: £30.6m
+
+Season Statistics for Selected Players (Up to GW4):
+| Name                   |   Games |   Clean Sheets |   Goals |   Assists |
+|:-----------------------|--------:|---------------:|--------:|----------:|
+| Virgil van Dijk        |       4 |              3 |       0 |         0 |
+| Trent Alexander-Arnold |       4 |              3 |       0 |         0 |
+| Benjamin White         |       4 |              3 |       0 |         0 |
+| Andrew Robertson       |       4 |              3 |       0 |         0 |
+| Cristian Romero        |       4 |              1 |       1 |         0 |
+
+
+MID:
+| name           | team           | prediction_range   |   actual_points |   confidence_score |   price |
+|:---------------|:---------------|:-------------------|----------------:|-------------------:|--------:|
+| Morgan Rogers  | Aston Villa    | 6.5 (4.4-8.7)      |              10 |               0.58 |    5.10 |
+| Mohamed Salah  | Liverpool      | 6.0 (3.9-8.2)      |               6 |               0.46 |   12.70 |
+| James Maddison | Spurs          | 5.4 (3.2-7.5)      |              12 |               0.50 |    7.50 |
+| Eberechi Eze   | Crystal Palace | 5.0 (2.8-7.1)      |               3 |               0.57 |    6.90 |
+| Son Heung-min  | Spurs          | 4.7 (2.5-6.8)      |              10 |               0.48 |   10.00 |
+
+Position Insights (MID):
+- Average Predicted Points: 5.52
+- Average Confidence Score: 0.52
+- Total Actual Points: 41.00
+- Combined Price: £42.2m
+
+Season Statistics for Selected Players (Up to GW4):
+| Name           |   Games |   Goals |   Assists |   Avg ICT |   Points/Game |
+|:---------------|--------:|--------:|----------:|----------:|--------------:|
+| Morgan Rogers  |       4 |       0 |         0 |       5.6 |           2.0 |
+| Mohamed Salah  |       4 |       3 |         3 |      12.3 |          10.8 |
+| James Maddison |       4 |       0 |         2 |       8.9 |           3.5 |
+| Eberechi Eze   |       4 |       1 |         0 |       8.8 |           4.0 |
+| Son Heung-min  |       4 |       2 |         0 |       7.8 |           5.8 |
+
+
+FWD:
+| name           | team      | prediction_range   |   actual_points |   confidence_score |   price |
+|:---------------|:----------|:-------------------|----------------:|-------------------:|--------:|
+| Erling Haaland | Man City  | 7.7 (5.8-9.7)      |               9 |               0.57 |   15.20 |
+| Yoane Wissa    | Brentford | 5.8 (3.9-7.7)      |               0 |               0.55 |    6.10 |
+| Alexander Isak | Newcastle | 5.3 (3.4-7.2)      |               2 |               0.49 |    8.50 |
+| Jamie Vardy    | Leicester | 4.5 (2.6-6.5)      |               2 |               0.54 |    5.60 |
+| Joshua Zirkzee | Man Utd   | 4.5 (2.6-6.4)      |               2 |               0.56 |    7.00 |
+
+Position Insights (FWD):
+- Average Predicted Points: 5.58
+- Average Confidence Score: 0.54
+- Total Actual Points: 15.00
+- Combined Price: £42.4m
+
+Season Statistics for Selected Players (Up to GW4):
+| Name           |   Games |   Goals |   Assists |   Avg ICT |   Points/Game |
+|:---------------|--------:|--------:|----------:|----------:|--------------:|
+| Erling Haaland |       4 |       9 |         0 |      15.0 |          13.5 |
+| Yoane Wissa    |       4 |       3 |         1 |       8.4 |           7.0 |
+| Alexander Isak |       4 |       1 |         1 |       5.3 |           4.2 |
+| Jamie Vardy    |       4 |       2 |         0 |       4.7 |           4.8 |
+| Joshua Zirkzee |       4 |       1 |         0 |       5.4 |           3.0 |
+
+
+Predicted Gameweek 5 Summary:
+Total Actual Points Across All Positions: 95
+
+--------------------------------------------------------------------------------

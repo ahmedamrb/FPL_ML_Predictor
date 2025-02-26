@@ -1,0 +1,111 @@
+--------------------------------------------------------------------------------
+
+
+Top 5 Predicted Performers for GW 20 Season 2024_25
+Generated on: 2025-02-26 21:51:32
+
+
+GK:
+| name                  | team          | prediction_range   |   actual_points |   confidence_score |   price |
+|:----------------------|:--------------|:-------------------|----------------:|-------------------:|--------:|
+| Bernd Leno            | Fulham        | 5.4 (4.0-6.7)      |               1 |               0.67 |    5.00 |
+| Matz Sels             | Nott'm Forest | 4.1 (2.7-5.4)      |               9 |               0.55 |    4.80 |
+| Alisson Ramses Becker | Liverpool     | 4.1 (2.7-5.4)      |               1 |               0.52 |    5.40 |
+| Aaron Ramsdale        | Southampton   | 4.0 (2.7-5.4)      |               1 |               0.58 |    4.40 |
+| José Malheiro de Sá   | Wolves        | 3.6 (2.2-4.9)      |               1 |               0.53 |    4.30 |
+
+Position Insights (GK):
+- Average Predicted Points: 4.22
+- Average Confidence Score: 0.57
+- Total Actual Points: 13.00
+- Combined Price: £23.9m
+
+Season Statistics for Selected Players (Up to GW19):
+| Name                  |   Games |   Clean Sheets |   Total Saves |   Saves/Game |
+|:----------------------|--------:|---------------:|--------------:|-------------:|
+| Bernd Leno            |      19 |              3 |            58 |          3.1 |
+| Matz Sels             |      19 |              8 |            53 |          2.8 |
+| Alisson Ramses Becker |      18 |              5 |            19 |          1.1 |
+| Aaron Ramsdale        |      19 |              2 |            50 |          2.6 |
+| José Malheiro de Sá   |      19 |              3 |            36 |          1.9 |
+
+
+DEF:
+| name             | team        | prediction_range   |   actual_points |   confidence_score |   price |
+|:-----------------|:------------|:-------------------|----------------:|-------------------:|--------:|
+| Milos Kerkez     | Bournemouth | 3.9 (1.6-6.1)      |              12 |               0.49 |    4.70 |
+| Jurriën Timber   | Arsenal     | 3.7 (1.5-5.9)      |               0 |               0.48 |    5.70 |
+| Antonee Robinson | Fulham      | 3.7 (1.5-5.9)      |               1 |               0.52 |    4.90 |
+| Lewis Hall       | Newcastle   | 3.6 (1.4-5.8)      |               2 |               0.45 |    4.70 |
+| Joško Gvardiol   | Man City    | 3.5 (1.3-5.8)      |               2 |               0.47 |    6.00 |
+
+Position Insights (DEF):
+- Average Predicted Points: 3.68
+- Average Confidence Score: 0.48
+- Total Actual Points: 17.00
+- Combined Price: £26.0m
+
+Season Statistics for Selected Players (Up to GW19):
+| Name             |   Games |   Clean Sheets |   Goals |   Assists |
+|:-----------------|--------:|---------------:|--------:|----------:|
+| Milos Kerkez     |      19 |              4 |       1 |         2 |
+| Jurriën Timber   |      19 |              6 |       1 |         1 |
+| Antonee Robinson |      19 |              3 |       0 |         7 |
+| Lewis Hall       |      19 |              7 |       0 |         4 |
+| Joško Gvardiol   |      19 |              4 |       4 |         0 |
+
+
+MID:
+| name          | team      | prediction_range   |   actual_points |   confidence_score |   price |
+|:--------------|:----------|:-------------------|----------------:|-------------------:|--------:|
+| Mohamed Salah | Liverpool | 8.2 (6.1-10.4)     |               7 |               0.53 |   13.60 |
+| Phil Foden    | Man City  | 6.3 (4.2-8.5)      |               8 |               0.53 |    9.20 |
+| Cole Palmer   | Chelsea   | 6.1 (4.0-8.3)      |              10 |               0.48 |   11.40 |
+| Luis Díaz     | Liverpool | 5.3 (3.2-7.5)      |               1 |               0.48 |    7.50 |
+| Bryan Mbeumo  | Brentford | 4.8 (2.7-7.0)      |              19 |               0.46 |    7.60 |
+
+Position Insights (MID):
+- Average Predicted Points: 6.17
+- Average Confidence Score: 0.50
+- Total Actual Points: 45.00
+- Combined Price: £49.3m
+
+Season Statistics for Selected Players (Up to GW19):
+| Name          |   Games |   Goals |   Assists |   Avg ICT |   Points/Game |
+|:--------------|--------:|--------:|----------:|----------:|--------------:|
+| Mohamed Salah |      18 |      17 |        13 |      14.2 |          11.2 |
+| Phil Foden    |      19 |       1 |         2 |       4.6 |           2.0 |
+| Cole Palmer   |      19 |      12 |         7 |      10.8 |           7.5 |
+| Luis Díaz     |      18 |       8 |         3 |       6.4 |           5.3 |
+| Bryan Mbeumo  |      19 |      11 |         2 |       8.2 |           6.2 |
+
+
+FWD:
+| name                          | team          | prediction_range   |   actual_points |   confidence_score |   price |
+|:------------------------------|:--------------|:-------------------|----------------:|-------------------:|--------:|
+| Chris Wood                    | Nott'm Forest | 5.2 (3.2-7.1)      |               8 |               0.51 |    6.60 |
+| Alexander Isak                | Newcastle     | 5.0 (3.1-7.0)      |               7 |               0.47 |    9.10 |
+| João Pedro Junqueira de Jesus | Brighton      | 4.8 (2.8-6.7)      |               9 |               0.50 |    5.70 |
+| Erling Haaland                | Man City      | 4.6 (2.7-6.5)      |              13 |               0.46 |   14.80 |
+| Liam Delap                    | Ipswich       | 3.9 (1.9-5.8)      |               8 |               0.48 |    5.60 |
+
+Position Insights (FWD):
+- Average Predicted Points: 4.69
+- Average Confidence Score: 0.49
+- Total Actual Points: 45.00
+- Combined Price: £41.8m
+
+Season Statistics for Selected Players (Up to GW19):
+| Name                          |   Games |   Goals |   Assists |   Avg ICT |   Points/Game |
+|:------------------------------|--------:|--------:|----------:|----------:|--------------:|
+| Chris Wood                    |      19 |      11 |         1 |       5.5 |           5.6 |
+| Alexander Isak                |      19 |      12 |         4 |       8.8 |           5.9 |
+| João Pedro Junqueira de Jesus |      19 |       4 |         5 |       4.5 |           3.5 |
+| Erling Haaland                |      19 |      14 |         1 |       9.7 |           5.8 |
+| Liam Delap                    |      19 |       7 |         2 |       4.8 |           3.8 |
+
+
+Predicted Gameweek 20 Summary:
+Total Actual Points Across All Positions: 120
+
+--------------------------------------------------------------------------------

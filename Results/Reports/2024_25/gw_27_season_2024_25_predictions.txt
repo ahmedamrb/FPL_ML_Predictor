@@ -1,0 +1,111 @@
+--------------------------------------------------------------------------------
+
+
+Top 5 Predicted Performers for GW 27 Season 2024_25
+Generated on: 2025-02-26 21:51:46
+
+
+GK:
+| name                | team           | prediction_range   |   actual_points |   confidence_score |   price |
+|:--------------------|:---------------|:-------------------|----------------:|-------------------:|--------:|
+| André Onana         | Man Utd        | 4.7 (3.4-6.1)      |               1 |               0.58 |    5.00 |
+| Dean Henderson      | Crystal Palace | 4.0 (2.6-5.3)      |               2 |               0.57 |    4.50 |
+| Alphonse Areola     | West Ham       | 3.9 (2.5-5.2)      |               0 |               0.63 |    4.20 |
+| José Malheiro de Sá | Wolves         | 3.6 (2.3-5.0)      |               2 |               0.54 |    4.30 |
+| David Raya Martin   | Arsenal        | 3.5 (2.2-4.9)      |               1 |               0.53 |    5.50 |
+
+Position Insights (GK):
+- Average Predicted Points: 3.94
+- Average Confidence Score: 0.57
+- Total Actual Points: 6.00
+- Combined Price: £23.5m
+
+Season Statistics for Selected Players (Up to GW26):
+| Name                |   Games |   Clean Sheets |   Total Saves |   Saves/Game |
+|:--------------------|--------:|---------------:|--------------:|-------------:|
+| André Onana         |      26 |              7 |            71 |          2.7 |
+| Dean Henderson      |      26 |              8 |            71 |          2.7 |
+| Alphonse Areola     |      26 |              2 |            46 |          1.8 |
+| José Malheiro de Sá |      26 |              5 |            50 |          1.9 |
+| David Raya Martin   |      26 |              9 |            62 |          2.4 |
+
+
+DEF:
+| name              | team          | prediction_range   |   actual_points |   confidence_score |   price |
+|:------------------|:--------------|:-------------------|----------------:|-------------------:|--------:|
+| Virgil van Dijk   | Liverpool     | 4.2 (1.9-6.4)      |               0 |               0.55 |    6.40 |
+| Nathan Collins    | Brentford     | 3.9 (1.7-6.1)      |               1 |               0.50 |    4.50 |
+| James Tarkowski   | Everton       | 3.8 (1.6-6.0)      |               1 |               0.46 |    4.80 |
+| Nikola Milenković | Nott'm Forest | 3.7 (1.5-6.0)      |               0 |               0.51 |    4.80 |
+| Antonee Robinson  | Fulham        | 3.6 (1.4-5.8)      |               0 |               0.52 |    5.10 |
+
+Position Insights (DEF):
+- Average Predicted Points: 3.83
+- Average Confidence Score: 0.51
+- Total Actual Points: 2.00
+- Combined Price: £25.6m
+
+Season Statistics for Selected Players (Up to GW26):
+| Name              |   Games |   Clean Sheets |   Goals |   Assists |
+|:------------------|--------:|---------------:|--------:|----------:|
+| Virgil van Dijk   |      25 |             11 |       1 |         1 |
+| Nathan Collins    |      26 |              5 |       2 |         5 |
+| James Tarkowski   |      25 |              9 |       1 |         1 |
+| Nikola Milenković |      26 |             10 |       3 |         1 |
+| Antonee Robinson  |      26 |              4 |       0 |        10 |
+
+
+MID:
+| name          | team      | prediction_range   |   actual_points |   confidence_score |   price |
+|:--------------|:----------|:-------------------|----------------:|-------------------:|--------:|
+| Cole Palmer   | Chelsea   | 7.0 (4.9-9.2)      |               3 |               0.51 |   11.10 |
+| Mohamed Salah | Liverpool | 6.1 (4.0-8.3)      |               0 |               0.46 |   13.70 |
+| Phil Foden    | Man City  | 6.0 (3.8-8.1)      |               0 |               0.52 |    9.30 |
+| Bryan Mbeumo  | Brentford | 5.9 (3.8-8.1)      |               1 |               0.50 |    7.90 |
+| Kevin Schade  | Brentford | 5.3 (3.2-7.4)      |               1 |               0.49 |    5.10 |
+
+Position Insights (MID):
+- Average Predicted Points: 6.07
+- Average Confidence Score: 0.50
+- Total Actual Points: 5.00
+- Combined Price: £47.1m
+
+Season Statistics for Selected Players (Up to GW26):
+| Name          |   Games |   Goals |   Assists |   Avg ICT |   Points/Game |
+|:--------------|--------:|--------:|----------:|----------:|--------------:|
+| Cole Palmer   |      26 |      14 |         8 |       9.9 |           6.8 |
+| Mohamed Salah |      25 |      25 |        16 |      14.7 |          11.4 |
+| Phil Foden    |      26 |       7 |         3 |       5.8 |           3.6 |
+| Bryan Mbeumo  |      26 |      15 |         4 |       9.3 |           6.4 |
+| Kevin Schade  |      26 |       7 |         4 |       3.9 |           3.7 |
+
+
+FWD:
+| name                             | team           | prediction_range   |   actual_points |   confidence_score |   price |
+|:---------------------------------|:---------------|:-------------------|----------------:|-------------------:|--------:|
+| Jean-Philippe Mateta             | Crystal Palace | 5.8 (3.9-7.7)      |               8 |               0.55 |    7.30 |
+| Matheus Santos Carneiro Da Cunha | Wolves         | 5.1 (3.2-7.1)      |               2 |               0.51 |    6.80 |
+| Norberto Bercique Gomes Betuncal | Everton        | 5.1 (3.2-7.0)      |               1 |               0.50 |    4.90 |
+| Chris Wood                       | Nott'm Forest  | 5.0 (3.1-7.0)      |               1 |               0.50 |    7.10 |
+| Yoane Wissa                      | Brentford      | 4.7 (2.8-6.6)      |               1 |               0.51 |    6.30 |
+
+Position Insights (FWD):
+- Average Predicted Points: 5.16
+- Average Confidence Score: 0.51
+- Total Actual Points: 13.00
+- Combined Price: £32.4m
+
+Season Statistics for Selected Players (Up to GW26):
+| Name                             |   Games |   Goals |   Assists |   Avg ICT |   Points/Game |
+|:---------------------------------|--------:|--------:|----------:|----------:|--------------:|
+| Jean-Philippe Mateta             |      26 |      11 |         2 |       5.6 |           4.4 |
+| Matheus Santos Carneiro Da Cunha |      26 |      13 |         4 |       8.0 |           5.4 |
+| Norberto Bercique Gomes Betuncal |      25 |       6 |         0 |       2.6 |           2.2 |
+| Chris Wood                       |      26 |      18 |         3 |       6.3 |           6.5 |
+| Yoane Wissa                      |      26 |      11 |         3 |       5.5 |           4.3 |
+
+
+Predicted Gameweek 27 Summary:
+Total Actual Points Across All Positions: 26
+
+--------------------------------------------------------------------------------

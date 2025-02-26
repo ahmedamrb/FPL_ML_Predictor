@@ -1,0 +1,111 @@
+--------------------------------------------------------------------------------
+
+
+Top 5 Predicted Performers for GW 24 Season 2024_25
+Generated on: 2025-02-26 21:51:39
+
+
+GK:
+| name                  | team          | prediction_range   |   actual_points |   confidence_score |   price |
+|:----------------------|:--------------|:-------------------|----------------:|-------------------:|--------:|
+| Jordan Pickford       | Everton       | 16.4 (14.0-18.9)   |              10 |               0.67 |    5.00 |
+| Alisson Ramses Becker | Liverpool     | 9.2 (6.8-11.6)     |              10 |               0.57 |    5.50 |
+| Matz Sels             | Nott'm Forest | 4.2 (2.8-5.5)      |               8 |               0.56 |    5.00 |
+| David Raya Martin     | Arsenal       | 4.1 (2.7-5.4)      |               3 |               0.56 |    5.60 |
+| Mark Flekken          | Brentford     | 4.0 (2.6-5.3)      |               0 |               0.59 |    4.40 |
+
+Position Insights (GK):
+- Average Predicted Points: 7.58
+- Average Confidence Score: 0.59
+- Total Actual Points: 31.00
+- Combined Price: £25.5m
+
+Season Statistics for Selected Players (Up to GW23):
+| Name                  |   Games |   Clean Sheets |   Total Saves |   Saves/Game |
+|:----------------------|--------:|---------------:|--------------:|-------------:|
+| Jordan Pickford       |      22 |              8 |            67 |          3.0 |
+| Alisson Ramses Becker |      22 |              6 |            32 |          1.5 |
+| Matz Sels             |      23 |              9 |            69 |          3.0 |
+| David Raya Martin     |      23 |              8 |            56 |          2.4 |
+| Mark Flekken          |      23 |              2 |           105 |          4.6 |
+
+
+DEF:
+| name                   | team      | prediction_range   |   actual_points |   confidence_score |   price |
+|:-----------------------|:----------|:-------------------|----------------:|-------------------:|--------:|
+| Trent Alexander-Arnold | Liverpool | 16.4 (12.4-20.4)   |               7 |               0.62 |    7.30 |
+| Vitalii Mykolenko      | Everton   | 13.7 (9.7-17.7)    |               7 |               0.64 |    4.30 |
+| Jarrad Branthwaite     | Everton   | 11.6 (7.6-15.6)    |              10 |               0.60 |    4.80 |
+| Jake O'Brien           | Everton   | 11.4 (7.4-15.4)    |               7 |               0.68 |    4.50 |
+| James Tarkowski        | Everton   | 11.2 (7.2-15.2)    |              17 |               0.56 |    4.80 |
+
+Position Insights (DEF):
+- Average Predicted Points: 12.86
+- Average Confidence Score: 0.62
+- Total Actual Points: 48.00
+- Combined Price: £25.7m
+
+Season Statistics for Selected Players (Up to GW23):
+| Name                   |   Games |   Clean Sheets |   Goals |   Assists |
+|:-----------------------|--------:|---------------:|--------:|----------:|
+| Trent Alexander-Arnold |      22 |              8 |       1 |         6 |
+| Vitalii Mykolenko      |      22 |              7 |       0 |         1 |
+| Jarrad Branthwaite     |      22 |              6 |       0 |         0 |
+| Jake O'Brien           |      22 |              1 |       0 |         0 |
+| James Tarkowski        |      22 |              8 |       0 |         0 |
+
+
+MID:
+| name                | team      | prediction_range   |   actual_points |   confidence_score |   price |
+|:--------------------|:----------|:-------------------|----------------:|-------------------:|--------:|
+| Mohamed Salah       | Liverpool | 18.9 (15.0-22.7)   |              29 |               0.58 |   13.70 |
+| Dominik Szoboszlai  | Liverpool | 15.5 (11.7-19.4)   |               5 |               0.60 |    6.30 |
+| Luis Díaz           | Liverpool | 14.1 (10.2-17.9)   |               5 |               0.56 |    7.50 |
+| Idrissa Gueye       | Everton   | 10.5 (6.7-14.4)    |               4 |               0.65 |    4.80 |
+| Alexis Mac Allister | Liverpool | 10.5 (6.6-14.3)    |              10 |               0.60 |    6.20 |
+
+Position Insights (MID):
+- Average Predicted Points: 13.89
+- Average Confidence Score: 0.60
+- Total Actual Points: 53.00
+- Combined Price: £38.5m
+
+Season Statistics for Selected Players (Up to GW23):
+| Name                |   Games |   Goals |   Assists |   Avg ICT |   Points/Game |
+|:--------------------|--------:|--------:|----------:|----------:|--------------:|
+| Mohamed Salah       |      22 |      19 |        13 |      13.9 |          10.1 |
+| Dominik Szoboszlai  |      22 |       3 |         6 |       5.0 |           3.5 |
+| Luis Díaz           |      22 |       8 |         3 |       6.0 |           4.7 |
+| Idrissa Gueye       |      22 |       0 |         2 |       2.5 |           2.4 |
+| Alexis Mac Allister |      22 |       1 |         4 |       4.6 |           2.8 |
+
+
+FWD:
+| name                             | team      | prediction_range   |   actual_points |   confidence_score |   price |
+|:---------------------------------|:----------|:-------------------|----------------:|-------------------:|--------:|
+| Norberto Bercique Gomes Betuncal | Everton   | 10.1 (6.6-13.6)    |              21 |               0.52 |    4.90 |
+| Iliman Ndiaye                    | Everton   | 9.5 (6.0-13.0)     |               9 |               0.58 |    5.40 |
+| Darwin Núñez Ribeiro             | Liverpool | 9.3 (5.8-12.8)     |               2 |               0.60 |    7.00 |
+| Cody Gakpo                       | Liverpool | 9.0 (5.5-12.5)     |               7 |               0.51 |    7.50 |
+| Dominic Calvert-Lewin            | Everton   | 8.3 (4.8-11.7)     |               0 |               0.58 |    5.40 |
+
+Position Insights (FWD):
+- Average Predicted Points: 9.24
+- Average Confidence Score: 0.56
+- Total Actual Points: 39.00
+- Combined Price: £30.2m
+
+Season Statistics for Selected Players (Up to GW23):
+| Name                             |   Games |   Goals |   Assists |   Avg ICT |   Points/Game |
+|:---------------------------------|--------:|--------:|----------:|----------:|--------------:|
+| Norberto Bercique Gomes Betuncal |      22 |       1 |         0 |       0.9 |           1.0 |
+| Iliman Ndiaye                    |      22 |       5 |         0 |       4.4 |           3.3 |
+| Darwin Núñez Ribeiro             |      22 |       4 |         2 |       2.6 |           2.0 |
+| Cody Gakpo                       |      22 |       8 |         3 |       5.9 |           4.0 |
+| Dominic Calvert-Lewin            |      22 |       3 |         2 |       3.8 |           2.7 |
+
+
+Predicted Gameweek 24 Summary:
+Total Actual Points Across All Positions: 171
+
+--------------------------------------------------------------------------------

@@ -1,0 +1,585 @@
+
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>FPL GW5 Report - Season 2024_25</title>
+            <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+            <style>
+                body {
+                    font-family: 'Montserrat', sans-serif;
+                    background-color: #38003C; /* FPL Purple */
+                    color: #FFFFFF;
+                    padding: 20px;
+                    margin: 0;
+                }
+                h1 {
+                    color: #00FF87; /* FPL Green */
+                    text-align: center;
+                    margin-bottom: 20px;
+                    font-size: 2.5em;
+                    font-weight: 700;
+                }
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin: 20px 0;
+                    background-color: #1E1E1E;
+                    font-size: 1.2em;
+                }
+                th, td {
+                    padding: 15px;
+                    text-align: left;
+                    border-bottom: 1px solid #D4B8E9;
+                }
+                th {
+                    background-color: #E90052; /* FPL Pink */
+                    color: #FFFFFF;
+                }
+                tr:nth-child(even) {
+                    background-color: #2A2A2A;
+                }
+                .captain {
+                    font-weight: bold;
+                    color: #00FF87;
+                }
+                .pitch-container {
+                    width: 600px;
+                    height: 900px;
+                    position: relative;
+                    margin: 20px auto;
+                }
+                .pitch {
+                    width: 100%;
+                    height: 100%;
+                    background-image: url('https://i.ibb.co/LzyMzgNs/football-pitch.png');
+                    background-size: cover;
+                    background-position: center;
+                    position: relative;
+                    border: 3px solid #FFFFFF;
+                    border-radius: 8px;
+                }
+                .position {
+                    position: absolute;
+                    width: 100%;
+                    left: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+                }
+                .player-card {
+                    width: 110px;
+                    text-align: center;
+                    position: relative;
+                }
+                .player-card img {
+                    width: 110px;
+                    height: 110px;
+                }
+                .player-card .fallback {
+                    width: 110px;
+                    height: 110px;
+                    background-color: #FFFFFF;
+                    color: #000000;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 33px;
+                }
+                .player-name {
+                    margin-top: 5px;
+                    font-size: 16px;
+                    color: #000000;
+                    font-weight: bold;
+                    text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF;
+                }
+                .player-points {
+                    font-size: 14px;
+                    color: #000000;
+                    font-weight: bold;
+                    text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF;
+                }
+                .captain-badge {
+                    position: absolute;
+                    top: -15px;
+                    left: -15px;
+                    background-color: #E90052;
+                    color: white;
+                    border-radius: 50%;
+                    width: 30px;
+                    height: 30px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 16px;
+                    font-weight: bold;
+                    border: 2px solid #FFFFFF;
+                }
+                .subs {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 25px;
+                    margin: 20px 0;
+                }
+                .sub-player {
+                    text-align: center;
+                    width: 110px;
+                }
+                .sub-player img {
+                    width: 110px;
+                    height: 110px;
+                }
+                .summary {
+                    text-align: center;
+                    margin: 20px auto;
+                    background-color: #1E1E1E;
+                    padding: 25px;
+                    border-radius: 10px;
+                    border: 2px solid #00FF87;
+                    font-size: 1.2em;
+                    max-width: 600px;
+                    box-shadow: 0 0 10px rgba(0, 255, 135, 0.3);
+                }
+                .summary-title {
+                    color: #00FF87;
+                    font-size: 1.5em;
+                    margin-bottom: 20px;
+                    font-weight: 700;
+                }
+                .summary-item {
+                    margin: 10px 0;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+                .summary-label {
+                    color: #E90052;
+                    font-weight: 700;
+                }
+                .summary-value {
+                    color: #FFFFFF;
+                }
+                .progress-bar {
+                    width: 100%;
+                    background-color: #2A2A2A;
+                    height: 20px;
+                    border-radius: 10px;
+                    overflow: hidden;
+                    margin-top: 10px;
+                }
+                .progress {
+                    height: 100%;
+                    background-color: #00FF87;
+                    width: 97.6%;
+                    transition: width 0.5s ease-in-out;
+                }
+                @media (max-width: 600px) {
+                    .pitch-container {
+                        width: 100%;
+                        height: 600px;
+                    }
+                    .player-card, .sub-player {
+                        width: 85px;
+                    }
+                    .player-card img, .player-card .fallback, .sub-player img {
+                        width: 85px;
+                        height: 85px;
+                    }
+                    .player-name {
+                        font-size: 12px;
+                    }
+                    .player-points {
+                        font-size: 10px;
+                    }
+                    table {
+                        font-size: 1em;
+                    }
+                    .summary {
+                        padding: 15px;
+                    }
+                }
+            </style>
+        </head>
+        <body>
+            <h1>AI FPLManager Picks for GW 5 Season 2024_25</h1>
+            
+            <!-- Enhanced Summary -->
+            <div class="summary">
+                <div class="summary-title">Team Summary</div>
+                <div class="summary-item">
+                    <span class="summary-label">Predicted Points:</span>
+                    <span class="summary-value">66.7</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-label">Actual Points:</span>
+                    <span class="summary-value">73</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-label">GW Average Points:</span>
+                    <span class="summary-value">58</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-label">GW Highest Points:</span>
+                    <span class="summary-value">131</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-label">Budget Used (£97.6m / £100m):</span>
+                    <span class="summary-value">97.6%</span>
+                </div>                
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+                                <div class="summary-item">
+                    <span class="summary-label">Captain:</span>
+                    <span class="summary-value">Erling Haaland</span>
+                </div>
+            </div>
+            
+            <!-- Pitch Visualization -->
+            <div class="pitch-container">
+                <div class="pitch">
+        
+                <div class="position" style="top: 80%;">
+            
+                    <div class="player-card">
+                
+                        <img src="https://resources.premierleague.com/premierleague/photos/players/110x140/p154561.png" 
+                            alt="Raya" 
+                            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="fallback" style="display:none;">R</div>
+                    
+                        <div class="player-name">Raya</div>
+                        <div class="player-points">4</div>
+                    </div>
+                
+                </div>
+            
+                <div class="position" style="top: 60%;">
+            
+                    <div class="player-card">
+                
+                        <img src="https://resources.premierleague.com/premierleague/photos/players/110x140/p97032.png" 
+                            alt="Virgil" 
+                            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="fallback" style="display:none;">V</div>
+                    
+                        <div class="player-name">Virgil</div>
+                        <div class="player-points">6</div>
+                    </div>
+                
+                    <div class="player-card">
+                
+                        <img src="https://resources.premierleague.com/premierleague/photos/players/110x140/p169187.png" 
+                            alt="Alexander-Arnold" 
+                            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="fallback" style="display:none;">A</div>
+                    
+                        <div class="player-name">Alexander-Arnold</div>
+                        <div class="player-points">11</div>
+                    </div>
+                
+                    <div class="player-card">
+                
+                        <img src="https://resources.premierleague.com/premierleague/photos/players/110x140/p198869.png" 
+                            alt="White" 
+                            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="fallback" style="display:none;">W</div>
+                    
+                        <div class="player-name">White</div>
+                        <div class="player-points">1</div>
+                    </div>
+                
+                    <div class="player-card">
+                
+                        <img src="https://resources.premierleague.com/premierleague/photos/players/110x140/p122798.png" 
+                            alt="Robertson" 
+                            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="fallback" style="display:none;">R</div>
+                    
+                        <div class="player-name">Robertson</div>
+                        <div class="player-points">6</div>
+                    </div>
+                
+                    <div class="player-card">
+                
+                        <img src="https://resources.premierleague.com/premierleague/photos/players/110x140/p221632.png" 
+                            alt="Romero" 
+                            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="fallback" style="display:none;">R</div>
+                    
+                        <div class="player-name">Romero</div>
+                        <div class="player-points">2</div>
+                    </div>
+                
+                </div>
+            
+                <div class="position" style="top: 40%;">
+            
+                    <div class="player-card">
+                
+                        <img src="https://resources.premierleague.com/premierleague/photos/players/110x140/p244850.png" 
+                            alt="Rogers" 
+                            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="fallback" style="display:none;">R</div>
+                    
+                        <div class="player-name">Rogers</div>
+                        <div class="player-points">10</div>
+                    </div>
+                
+                    <div class="player-card">
+                
+                        <img src="https://resources.premierleague.com/premierleague/photos/players/110x140/p172780.png" 
+                            alt="Maddison" 
+                            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="fallback" style="display:none;">M</div>
+                    
+                        <div class="player-name">Maddison</div>
+                        <div class="player-points">12</div>
+                    </div>
+                
+                    <div class="player-card">
+                
+                        <img src="https://resources.premierleague.com/premierleague/photos/players/110x140/p232413.png" 
+                            alt="Eze" 
+                            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="fallback" style="display:none;">E</div>
+                    
+                        <div class="player-name">Eze</div>
+                        <div class="player-points">3</div>
+                    </div>
+                
+                </div>
+            
+                <div class="position" style="top: 15%;">
+            
+                    <div class="player-card">
+                
+                        <img src="https://resources.premierleague.com/premierleague/photos/players/110x140/p223094.png" 
+                            alt="Haaland" 
+                            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="fallback" style="display:none;">H</div>
+                    <div class="captain-badge">C</div>
+                        <div class="player-name">Haaland</div>
+                        <div class="player-points">18</div>
+                    </div>
+                
+                    <div class="player-card">
+                
+                        <img src="https://resources.premierleague.com/premierleague/photos/players/110x140/p216646.png" 
+                            alt="Wissa" 
+                            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="fallback" style="display:none;">W</div>
+                    
+                        <div class="player-name">Wissa</div>
+                        <div class="player-points">0</div>
+                    </div>
+                
+                </div>
+            
+                </div>
+            </div>
+            
+            <!-- Substitutes -->
+            <div class="subs">
+        
+                    <div class="sub-player">
+                
+                        <img src="https://resources.premierleague.com/premierleague/photos/players/110x140/p85633.png" 
+                            alt="Sels" 
+                            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="fallback" style="display:none;">S</div>
+                    
+                        <div class="player-name">Sels</div>
+                        <div class="player-points">1</div>
+                    </div>
+                
+                    <div class="sub-player">
+                
+                        <img src="https://resources.premierleague.com/premierleague/photos/players/110x140/p433154.png" 
+                            alt="McNeil" 
+                            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="fallback" style="display:none;">M</div>
+                    
+                        <div class="player-name">McNeil</div>
+                        <div class="player-points">2</div>
+                    </div>
+                
+                    <div class="sub-player">
+                
+                        <img src="https://resources.premierleague.com/premierleague/photos/players/110x140/p449871.png" 
+                            alt="Onana" 
+                            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="fallback" style="display:none;">O</div>
+                    
+                        <div class="player-name">Onana</div>
+                        <div class="player-points">2</div>
+                    </div>
+                
+                    <div class="sub-player">
+                
+                        <img src="https://resources.premierleague.com/premierleague/photos/players/110x140/p50175.png" 
+                            alt="Welbeck" 
+                            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="fallback" style="display:none;">W</div>
+                    
+                        <div class="player-name">Welbeck</div>
+                        <div class="player-points">6</div>
+                    </div>
+                
+            </div>
+            
+            <!-- Squad Table -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Team</th>
+                        <th>Predicted Points</th>
+                        <th>Actual Points</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+        
+                    <tr class="">
+                        <td>David Raya Martin</td>
+                        <td>GK</td>
+                        <td>Arsenal</td>
+                        <td>4.6</td>
+                        <td>4</td>
+                        <td>£5.5m</td>
+                    </tr>
+                
+                    <tr class="">
+                        <td>Matz Sels</td>
+                        <td>GK</td>
+                        <td>Nott'm Forest</td>
+                        <td>3.7</td>
+                        <td>1</td>
+                        <td>£4.5m</td>
+                    </tr>
+                
+                    <tr class="">
+                        <td>Virgil van Dijk</td>
+                        <td>DEF</td>
+                        <td>Liverpool</td>
+                        <td>5.7</td>
+                        <td>6</td>
+                        <td>£6.0m</td>
+                    </tr>
+                
+                    <tr class="">
+                        <td>Trent Alexander-Arnold</td>
+                        <td>DEF</td>
+                        <td>Liverpool</td>
+                        <td>5.7</td>
+                        <td>11</td>
+                        <td>£7.0m</td>
+                    </tr>
+                
+                    <tr class="">
+                        <td>Benjamin White</td>
+                        <td>DEF</td>
+                        <td>Arsenal</td>
+                        <td>4.5</td>
+                        <td>1</td>
+                        <td>£6.5m</td>
+                    </tr>
+                
+                    <tr class="">
+                        <td>Andrew Robertson</td>
+                        <td>DEF</td>
+                        <td>Liverpool</td>
+                        <td>4.0</td>
+                        <td>6</td>
+                        <td>£6.0m</td>
+                    </tr>
+                
+                    <tr class="">
+                        <td>Cristian Romero</td>
+                        <td>DEF</td>
+                        <td>Spurs</td>
+                        <td>4.0</td>
+                        <td>2</td>
+                        <td>£5.1m</td>
+                    </tr>
+                
+                    <tr class="">
+                        <td>Morgan Rogers</td>
+                        <td>MID</td>
+                        <td>Aston Villa</td>
+                        <td>6.5</td>
+                        <td>10</td>
+                        <td>£5.1m</td>
+                    </tr>
+                
+                    <tr class="">
+                        <td>James Maddison</td>
+                        <td>MID</td>
+                        <td>Spurs</td>
+                        <td>5.4</td>
+                        <td>12</td>
+                        <td>£7.5m</td>
+                    </tr>
+                
+                    <tr class="">
+                        <td>Eberechi Eze</td>
+                        <td>MID</td>
+                        <td>Crystal Palace</td>
+                        <td>5.0</td>
+                        <td>3</td>
+                        <td>£6.9m</td>
+                    </tr>
+                
+                    <tr class="">
+                        <td>Dwight McNeil</td>
+                        <td>MID</td>
+                        <td>Everton</td>
+                        <td>3.5</td>
+                        <td>2</td>
+                        <td>£5.4m</td>
+                    </tr>
+                
+                    <tr class="">
+                        <td>Amadou Onana</td>
+                        <td>MID</td>
+                        <td>Aston Villa</td>
+                        <td>3.2</td>
+                        <td>2</td>
+                        <td>£5.1m</td>
+                    </tr>
+                
+                    <tr class="captain">
+                        <td>Erling Haaland (C)</td>
+                        <td>FWD</td>
+                        <td>Man City</td>
+                        <td>7.7</td>
+                        <td>9</td>
+                        <td>£15.2m</td>
+                    </tr>
+                
+                    <tr class="">
+                        <td>Yoane Wissa</td>
+                        <td>FWD</td>
+                        <td>Brentford</td>
+                        <td>5.8</td>
+                        <td>0</td>
+                        <td>£6.1m</td>
+                    </tr>
+                
+                    <tr class="">
+                        <td>Danny Welbeck</td>
+                        <td>FWD</td>
+                        <td>Brighton</td>
+                        <td>3.1</td>
+                        <td>6</td>
+                        <td>£5.7m</td>
+                    </tr>
+                
+                </tbody>
+            </table>
+        </body>
+        </html>
+        

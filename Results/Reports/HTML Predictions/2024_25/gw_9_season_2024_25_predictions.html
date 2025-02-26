@@ -1,0 +1,144 @@
+
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>FPL GW9 Predictions - Season 2024_25</title>
+            <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+            <style>
+                body {
+                    font-family: 'Montserrat', sans-serif;
+                    background-color: #38003C; /* FPL Purple */
+                    color: #FFFFFF;
+                    padding: 20px;
+                    margin: 0;
+                }
+                h1 {
+                    color: #00FF87; /* FPL Green */
+                    text-align: center;
+                    margin-bottom: 20px;
+                    font-size: 2.5em;
+                    font-weight: 700;
+                }
+                h2 {
+                    color: #E90052; /* FPL Pink */
+                    font-size: 1.8em;
+                    margin: 30px 0 15px;
+                }
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin: 20px 0;
+                    background-color: #1E1E1E;
+                    font-size: 1.2em;
+                }
+                th, td {
+                    padding: 15px;
+                    text-align: left;
+                    border-bottom: 1px solid #D4B8E9;
+                }
+                th {
+                    background-color: #E90052; /* FPL Pink */
+                    color: #FFFFFF;
+                }
+                tr:nth-child(even) {
+                    background-color: #2A2A2A;
+                }
+                .insights, .summary {
+                    background-color: #1E1E1E;
+                    padding: 20px;
+                    border-radius: 10px;
+                    margin: 20px 0;
+                    border: 2px solid #00FF87;
+                }
+                .insights p, .summary p {
+                    margin: 10px 0;
+                    font-size: 1.1em;
+                }
+                .insights-title, .summary-title {
+                    color: #00FF87;
+                    font-size: 1.5em;
+                    margin-bottom: 15px;
+                    font-weight: 700;
+                }
+                .position-section {
+                    display: none; /* Hidden by default */
+                }
+                .position-section.active {
+                    display: block; /* Shown when active */
+                }
+                .button-container {
+                    text-align: center;
+                    margin: 20px 0;
+                }
+                .position-button {
+                    background-color: #E90052; /* FPL Pink */
+                    color: #FFFFFF;
+                    border: none;
+                    padding: 10px 20px;
+                    margin: 0 10px;
+                    font-size: 1.2em;
+                    font-family: 'Montserrat', sans-serif;
+                    cursor: pointer;
+                    border-radius: 5px;
+                    transition: background-color 0.3s;
+                }
+                .position-button:hover {
+                    background-color: #00FF87; /* FPL Green */
+                }
+                .position-button.active {
+                    background-color: #00FF87; /* FPL Green */
+                    font-weight: 700;
+                }
+                @media (max-width: 600px) {
+                    table {
+                        font-size: 1em;
+                    }
+                    h1 {
+                        font-size: 2em;
+                    }
+                    h2 {
+                        font-size: 1.5em;
+                    }
+                    .insights, .summary {
+                        padding: 15px;
+                    }
+                    .position-button {
+                        padding: 8px 15px;
+                        font-size: 1em;
+                        margin: 5px;
+                    }
+                }
+            </style>
+            <script>
+                function showPosition(position) {
+                    // Hide all position sections
+                    document.querySelectorAll('.position-section').forEach(section => {
+                        section.classList.remove('active');
+                    });
+                    // Remove active class from all buttons
+                    document.querySelectorAll('.position-button').forEach(button => {
+                        button.classList.remove('active');
+                    });
+                    // Show selected position section
+                    document.getElementById(position).classList.add('active');
+                    // Add active class to clicked button
+                    document.getElementById('btn-' + position).classList.add('active');
+                }
+                // Show GK by default on page load
+                window.onload = function() {
+                    showPosition('GK');
+                };
+            </script>
+        </head>
+        <body>
+            <h1>Top 5 Predicted Performers for GW 9 Season 2024_25</h1>
+            <p style="text-align: center; font-size: 1.1em;">Generated on: 2025-02-26 21:51:09</p>
+            
+            <!-- Position Selection Buttons -->
+            <div class="button-container">
+                <button id="btn-GK" class="position-button" onclick="showPosition('GK')">GK</button>
+                <button id="btn-DEF" class="position-button" onclick="showPosition('DEF')">DEF</button>
+                <button id="btn-MID" class="position-button" onclick="showPosition('MID')">MID</button>
+                <button id="btn-FWD" class="position-button" onclick="showPosition('FWD')">FWD</button>
+            </div>
+        <div id="GK" class="position-section"><h2>GK:</h2><table><thead><tr><th>Name</th><th>Team</th><th>Predicted Points</th><th>Actual Points</th><th>Confidence Score</th><th>Price</th></tr></thead><tbody><tr><td>Verbruggen</td><td>Brighton</td><td>4.4 (3.0-5.7)</td><td>2</td><td>0.56</td><td>£4.5m</td></tr><tr><td>Areola</td><td>West Ham</td><td>3.9 (2.5-5.2)</td><td>0</td><td>0.63</td><td>£4.5m</td></tr><tr><td>Vicario</td><td>Spurs</td><td>3.7 (2.4-5.1)</td><td>3</td><td>0.56</td><td>£5.0m</td></tr><tr><td>Leno</td><td>Fulham</td><td>3.7 (2.4-5.1)</td><td>3</td><td>0.60</td><td>£5.0m</td></tr><tr><td>Pope</td><td>Newcastle</td><td>3.5 (2.1-4.8)</td><td>2</td><td>0.57</td><td>£5.0m</td></tr></tbody></table><div class="insights"><div class="insights-title">Position Insights (GK):</div><p>- Average Predicted Points: 3.83</p><p>- Average Confidence Score: 0.59</p><p>- Total Actual Points: 10.00</p><p>- Combined Price: £24.0m</p><p>Season Statistics for Selected Players (Up to GW8):</p><table><thead><tr><th>Name</th><th>Games</th><th>Clean Sheets</th><th>Total Saves</th><th>Saves/Game</th></tr></thead><tbody><tr><td>Bart Verbruggen</td><td>8</td><td>2</td><td>18</td><td>2.2</td></tr><tr><td>Alphonse Areola</td><td>8</td><td>1</td><td>20</td><td>2.5</td></tr><tr><td>Guglielmo Vicario</td><td>8</td><td>2</td><td>17</td><td>2.1</td></tr><tr><td>Bernd Leno</td><td>8</td><td>1</td><td>25</td><td>3.1</td></tr><tr><td>Nick Pope</td><td>8</td><td>2</td><td>35</td><td>4.4</td></tr></tbody></table></div></div><div id="DEF" class="position-section"><h2>DEF:</h2><table><thead><tr><th>Name</th><th>Team</th><th>Predicted Points</th><th>Actual Points</th><th>Confidence Score</th><th>Price</th></tr></thead><tbody><tr><td>Alexander-Arnold</td><td>Liverpool</td><td>4.6 (2.4-6.8)</td><td>1</td><td>0.48</td><td>£7.1m</td></tr><tr><td>Gvardiol</td><td>Man City</td><td>4.4 (2.1-6.6)</td><td>9</td><td>0.51</td><td>£6.0m</td></tr><tr><td>Dalot</td><td>Man Utd</td><td>4.3 (2.1-6.6)</td><td>1</td><td>0.52</td><td>£5.1m</td></tr><tr><td>Aina</td><td>Nott'm Forest</td><td>4.0 (1.8-6.3)</td><td>2</td><td>0.45</td><td>£4.5m</td></tr><tr><td>Keane</td><td>Everton</td><td>3.9 (1.7-6.1)</td><td>2</td><td>0.50</td><td>£4.1m</td></tr></tbody></table><div class="insights"><div class="insights-title">Position Insights (DEF):</div><p>- Average Predicted Points: 4.25</p><p>- Average Confidence Score: 0.49</p><p>- Total Actual Points: 15.00</p><p>- Combined Price: £26.8m</p><p>Season Statistics for Selected Players (Up to GW8):</p><table><thead><tr><th>Name</th><th>Games</th><th>Clean Sheets</th><th>Goals</th><th>Assists</th></tr></thead><tbody><tr><td>Trent Alexander-Arnold</td><td>8</td><td>5</td><td>0</td><td>1</td></tr><tr><td>Joško Gvardiol</td><td>8</td><td>1</td><td>2</td><td>0</td></tr><tr><td>Diogo Dalot Teixeira</td><td>8</td><td>4</td><td>0</td><td>1</td></tr><tr><td>Ola Aina</td><td>8</td><td>3</td><td>0</td><td>0</td></tr><tr><td>Michael Keane</td><td>8</td><td>2</td><td>2</td><td>0</td></tr></tbody></table></div></div><div id="MID" class="position-section"><h2>MID:</h2><table><thead><tr><th>Name</th><th>Team</th><th>Predicted Points</th><th>Actual Points</th><th>Confidence Score</th><th>Price</th></tr></thead><tbody><tr><td>Palmer</td><td>Chelsea</td><td>8.2 (6.1-10.4)</td><td>10</td><td>0.54</td><td>£10.8m</td></tr><tr><td>Saka</td><td>Arsenal</td><td>6.4 (4.3-8.6)</td><td>9</td><td>0.51</td><td>£10.1m</td></tr><tr><td>M.Salah</td><td>Liverpool</td><td>5.8 (3.7-8.0)</td><td>10</td><td>0.45</td><td>£12.6m</td></tr><tr><td>Bernardo</td><td>Man City</td><td>5.4 (3.2-7.5)</td><td>3</td><td>0.60</td><td>£6.5m</td></tr><tr><td>Kulusevski</td><td>Spurs</td><td>5.0 (2.8-7.1)</td><td>1</td><td>0.55</td><td>£6.2m</td></tr></tbody></table><div class="insights"><div class="insights-title">Position Insights (MID):</div><p>- Average Predicted Points: 6.16</p><p>- Average Confidence Score: 0.53</p><p>- Total Actual Points: 33.00</p><p>- Combined Price: £46.2m</p><p>Season Statistics for Selected Players (Up to GW8):</p><table><thead><tr><th>Name</th><th>Games</th><th>Goals</th><th>Assists</th><th>Avg ICT</th><th>Points/Game</th></tr></thead><tbody><tr><td>Cole Palmer</td><td>8</td><td>6</td><td>5</td><td>11.3</td><td>8.6</td></tr><tr><td>Bukayo Saka</td><td>8</td><td>2</td><td>7</td><td>12.7</td><td>6.8</td></tr><tr><td>Mohamed Salah</td><td>8</td><td>5</td><td>5</td><td>12.2</td><td>9.2</td></tr><tr><td>Bernardo Veiga de Carvalho e Silva</td><td>8</td><td>0</td><td>3</td><td>8.0</td><td>3.4</td></tr><tr><td>Dejan Kulusevski</td><td>8</td><td>2</td><td>1</td><td>8.7</td><td>4.1</td></tr></tbody></table></div></div><div id="FWD" class="position-section"><h2>FWD:</h2><table><thead><tr><th>Name</th><th>Team</th><th>Predicted Points</th><th>Actual Points</th><th>Confidence Score</th><th>Price</th></tr></thead><tbody><tr><td>Haaland</td><td>Man City</td><td>9.9 (8.0-11.8)</td><td>6</td><td>0.63</td><td>£15.4m</td></tr><tr><td>N.Jackson</td><td>Chelsea</td><td>6.4 (4.5-8.3)</td><td>9</td><td>0.57</td><td>£7.9m</td></tr><tr><td>Calvert-Lewin</td><td>Everton</td><td>4.5 (2.5-6.4)</td><td>2</td><td>0.57</td><td>£6.0m</td></tr><tr><td>Raúl</td><td>Fulham</td><td>4.3 (2.3-6.2)</td><td>2</td><td>0.51</td><td>£5.6m</td></tr><tr><td>Watkins</td><td>Aston Villa</td><td>4.1 (2.1-6.0)</td><td>2</td><td>0.46</td><td>£9.1m</td></tr></tbody></table><div class="insights"><div class="insights-title">Position Insights (FWD):</div><p>- Average Predicted Points: 5.81</p><p>- Average Confidence Score: 0.55</p><p>- Total Actual Points: 21.00</p><p>- Combined Price: £44.0m</p><p>Season Statistics for Selected Players (Up to GW8):</p><table><thead><tr><th>Name</th><th>Games</th><th>Goals</th><th>Assists</th><th>Avg ICT</th><th>Points/Game</th></tr></thead><tbody><tr><td>Erling Haaland</td><td>8</td><td>10</td><td>0</td><td>11.8</td><td>8.6</td></tr><tr><td>Nicolas Jackson</td><td>8</td><td>5</td><td>3</td><td>8.2</td><td>6.0</td></tr><tr><td>Dominic Calvert-Lewin</td><td>8</td><td>2</td><td>1</td><td>5.3</td><td>3.6</td></tr><tr><td>Raúl Jiménez</td><td>8</td><td>4</td><td>1</td><td>6.3</td><td>4.9</td></tr><tr><td>Ollie Watkins</td><td>8</td><td>5</td><td>2</td><td>7.0</td><td>6.1</td></tr></tbody></table></div></div><div class="summary"><div class="summary-title">Gameweek Summary</div><p>Predicted Gameweek 9 Summary:</p><p>Total Actual Points Across All Positions: 79</p></div></body></html>

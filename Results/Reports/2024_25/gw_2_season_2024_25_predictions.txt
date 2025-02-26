@@ -1,0 +1,111 @@
+--------------------------------------------------------------------------------
+
+
+Top 5 Predicted Performers for GW 2 Season 2024_25
+Generated on: 2025-02-26 21:50:52
+
+
+GK:
+| name                      | team           | prediction_range   |   actual_points |   confidence_score |   price |
+|:--------------------------|:---------------|:-------------------|----------------:|-------------------:|--------:|
+| Dean Henderson            | Crystal Palace | 4.8 (3.4-6.1)      |               1 |               0.61 |    4.50 |
+| Robert Sánchez            | Chelsea        | 4.4 (3.1-5.7)      |               1 |               0.54 |    4.50 |
+| Ederson Santana de Moraes | Man City       | 4.3 (3.0-5.7)      |               2 |               0.55 |    5.50 |
+| José Malheiro de Sá       | Wolves         | 4.2 (2.8-5.5)      |              -1 |               0.56 |    4.50 |
+| Norberto Murara Neto      | Bournemouth    | 4.1 (2.8-5.5)      |               3 |               0.71 |    4.50 |
+
+Position Insights (GK):
+- Average Predicted Points: 4.37
+- Average Confidence Score: 0.59
+- Total Actual Points: 6.00
+- Combined Price: £23.5m
+
+Season Statistics for Selected Players (Up to GW1):
+| Name                      |   Games |   Clean Sheets |   Total Saves |   Saves/Game |
+|:--------------------------|--------:|---------------:|--------------:|-------------:|
+| Dean Henderson            |       1 |              0 |             3 |          3.0 |
+| Robert Sánchez            |       1 |              0 |             3 |          3.0 |
+| Ederson Santana de Moraes |       1 |              1 |             3 |          3.0 |
+| José Malheiro de Sá       |       1 |              0 |             4 |          4.0 |
+| Norberto Murara Neto      |       1 |              0 |             7 |          7.0 |
+
+
+DEF:
+| name                   | team      | prediction_range   |   actual_points |   confidence_score |   price |
+|:-----------------------|:----------|:-------------------|----------------:|-------------------:|--------:|
+| Trent Alexander-Arnold | Liverpool | 7.5 (5.3-9.7)      |               6 |               0.58 |    7.00 |
+| Joško Gvardiol         | Man City  | 6.6 (4.4-8.9)      |               2 |               0.60 |    6.00 |
+| Virgil van Dijk        | Liverpool | 6.1 (3.8-8.3)      |               7 |               0.63 |    6.00 |
+| Benjamin White         | Arsenal   | 5.9 (3.7-8.2)      |               6 |               0.64 |    6.50 |
+| Andrew Robertson       | Liverpool | 5.6 (3.4-7.8)      |               6 |               0.59 |    6.00 |
+
+Position Insights (DEF):
+- Average Predicted Points: 6.35
+- Average Confidence Score: 0.61
+- Total Actual Points: 27.00
+- Combined Price: £31.5m
+
+Season Statistics for Selected Players (Up to GW1):
+| Name                   |   Games |   Clean Sheets |   Goals |   Assists |
+|:-----------------------|--------:|---------------:|--------:|----------:|
+| Trent Alexander-Arnold |       1 |              1 |       0 |         0 |
+| Joško Gvardiol         |       1 |              1 |       0 |         0 |
+| Virgil van Dijk        |       1 |              1 |       0 |         0 |
+| Benjamin White         |       1 |              1 |       0 |         0 |
+| Andrew Robertson       |       1 |              1 |       0 |         0 |
+
+
+MID:
+| name                    | team      | prediction_range   |   actual_points |   confidence_score |   price |
+|:------------------------|:----------|:-------------------|----------------:|-------------------:|--------:|
+| Son Heung-min           | Spurs     | 8.9 (6.7-11.0)     |              16 |               0.62 |   10.00 |
+| Bukayo Saka             | Arsenal   | 7.0 (4.8-9.1)      |               6 |               0.53 |   10.00 |
+| Cole Palmer             | Chelsea   | 6.8 (4.7-8.9)      |              17 |               0.50 |   10.50 |
+| Luis Díaz               | Liverpool | 6.7 (4.6-8.9)      |              14 |               0.53 |    7.50 |
+| Diogo Teixeira da Silva | Liverpool | 6.4 (4.3-8.6)      |               6 |               0.59 |    7.50 |
+
+Position Insights (MID):
+- Average Predicted Points: 7.16
+- Average Confidence Score: 0.55
+- Total Actual Points: 59.00
+- Combined Price: £45.5m
+
+Season Statistics for Selected Players (Up to GW1):
+| Name                    |   Games |   Goals |   Assists |   Avg ICT |   Points/Game |
+|:------------------------|--------:|--------:|----------:|----------:|--------------:|
+| Son Heung-min           |       1 |       0 |         0 |       6.7 |           2.0 |
+| Bukayo Saka             |       1 |       1 |         1 |      20.4 |          12.0 |
+| Cole Palmer             |       1 |       0 |         0 |       6.8 |           2.0 |
+| Luis Díaz               |       1 |       0 |         0 |       7.8 |           3.0 |
+| Diogo Teixeira da Silva |       1 |       1 |         0 |       8.3 |           8.0 |
+
+
+FWD:
+| name                     | team          | prediction_range   |   actual_points |   confidence_score |   price |
+|:-------------------------|:--------------|:-------------------|----------------:|-------------------:|--------:|
+| Erling Haaland           | Man City      | 11.3 (9.4-13.3)    |              17 |               0.65 |   15.00 |
+| Dominic Solanke-Mitchell | Spurs         | 9.2 (7.3-11.1)     |               0 |               0.65 |    7.50 |
+| Chris Wood               | Nott'm Forest | 5.3 (3.4-7.2)      |               1 |               0.51 |    6.00 |
+| Danny Welbeck            | Brighton      | 4.9 (2.9-6.8)      |               9 |               0.53 |    5.50 |
+| Kai Havertz              | Arsenal       | 4.7 (2.8-6.7)      |               2 |               0.52 |    8.00 |
+
+Position Insights (FWD):
+- Average Predicted Points: 7.08
+- Average Confidence Score: 0.58
+- Total Actual Points: 29.00
+- Combined Price: £42.0m
+
+Season Statistics for Selected Players (Up to GW1):
+| Name                     |   Games |   Goals |   Assists |   Avg ICT |   Points/Game |
+|:-------------------------|--------:|--------:|----------:|----------:|--------------:|
+| Erling Haaland           |       1 |       1 |         0 |       7.5 |           7.0 |
+| Dominic Solanke-Mitchell |       1 |       0 |         0 |       9.5 |           2.0 |
+| Chris Wood               |       1 |       1 |         0 |       5.9 |           9.0 |
+| Danny Welbeck            |       1 |       1 |         1 |      11.1 |          12.0 |
+| Kai Havertz              |       1 |       1 |         1 |      12.5 |          12.0 |
+
+
+Predicted Gameweek 2 Summary:
+Total Actual Points Across All Positions: 121
+
+--------------------------------------------------------------------------------

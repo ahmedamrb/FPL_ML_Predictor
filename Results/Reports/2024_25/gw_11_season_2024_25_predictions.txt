@@ -1,0 +1,111 @@
+--------------------------------------------------------------------------------
+
+
+Top 5 Predicted Performers for GW 11 Season 2024_25
+Generated on: 2025-02-26 21:51:14
+
+
+GK:
+| name                     | team        | prediction_range   |   actual_points |   confidence_score |   price |
+|:-------------------------|:------------|:-------------------|----------------:|-------------------:|--------:|
+| Mark Flekken             | Brentford   | 4.9 (3.6-6.3)      |               1 |               0.63 |    4.50 |
+| Robert Sánchez           | Chelsea     | 4.3 (2.9-5.6)      |               2 |               0.53 |    4.70 |
+| Arijanet Muric           | Ipswich     | 4.2 (2.8-5.5)      |               3 |               0.60 |    4.40 |
+| André Onana              | Man Utd     | 4.0 (2.6-5.3)      |               9 |               0.54 |    5.00 |
+| Emiliano Martínez Romero | Aston Villa | 4.0 (2.6-5.3)      |               2 |               0.60 |    5.00 |
+
+Position Insights (GK):
+- Average Predicted Points: 4.26
+- Average Confidence Score: 0.58
+- Total Actual Points: 17.00
+- Combined Price: £23.6m
+
+Season Statistics for Selected Players (Up to GW10):
+| Name                     |   Games |   Clean Sheets |   Total Saves |   Saves/Game |
+|:-------------------------|--------:|---------------:|--------------:|-------------:|
+| Mark Flekken             |      10 |              0 |            54 |          5.4 |
+| Robert Sánchez           |      10 |              2 |            40 |          4.0 |
+| Arijanet Muric           |      10 |              1 |            38 |          3.8 |
+| André Onana              |      10 |              4 |            23 |          2.3 |
+| Emiliano Martínez Romero |      10 |              1 |            24 |          2.4 |
+
+
+DEF:
+| name                   | team           | prediction_range   |   actual_points |   confidence_score |   price |
+|:-----------------------|:---------------|:-------------------|----------------:|-------------------:|--------:|
+| Trent Alexander-Arnold | Liverpool      | 5.0 (2.8-7.2)      |               1 |               0.50 |    7.00 |
+| Marc Guéhi             | Crystal Palace | 3.8 (1.6-6.0)      |               1 |               0.46 |    4.40 |
+| Rayan Aït-Nouri        | Wolves         | 3.7 (1.5-5.9)      |               6 |               0.48 |    4.60 |
+| Ashley Young           | Everton        | 3.6 (1.4-5.8)      |               5 |               0.45 |    4.50 |
+| Vitalii Mykolenko      | Everton        | 3.6 (1.4-5.8)      |               6 |               0.48 |    4.30 |
+
+Position Insights (DEF):
+- Average Predicted Points: 3.93
+- Average Confidence Score: 0.47
+- Total Actual Points: 19.00
+- Combined Price: £24.8m
+
+Season Statistics for Selected Players (Up to GW10):
+| Name                   |   Games |   Clean Sheets |   Goals |   Assists |
+|:-----------------------|--------:|---------------:|--------:|----------:|
+| Trent Alexander-Arnold |      10 |              5 |       0 |         1 |
+| Marc Guéhi             |      10 |              2 |       2 |         0 |
+| Rayan Aït-Nouri        |      10 |              0 |       3 |         2 |
+| Ashley Young           |      10 |              2 |       0 |         3 |
+| Vitalii Mykolenko      |      10 |              1 |       0 |         0 |
+
+
+MID:
+| name               | team      | prediction_range   |   actual_points |   confidence_score |   price |
+|:-------------------|:----------|:-------------------|----------------:|-------------------:|--------:|
+| Bukayo Saka        | Arsenal   | 6.0 (3.8-8.1)      |               2 |               0.50 |   10.10 |
+| Mohamed Salah      | Liverpool | 5.9 (3.8-8.1)      |              14 |               0.45 |   12.70 |
+| Cole Palmer        | Chelsea   | 5.2 (3.0-7.3)      |               2 |               0.44 |   11.00 |
+| Bryan Mbeumo       | Brentford | 4.9 (2.8-7.1)      |               5 |               0.46 |    7.80 |
+| Alejandro Garnacho | Man Utd   | 4.9 (2.7-7.0)      |               6 |               0.60 |    6.30 |
+
+Position Insights (MID):
+- Average Predicted Points: 5.38
+- Average Confidence Score: 0.49
+- Total Actual Points: 29.00
+- Combined Price: £47.9m
+
+Season Statistics for Selected Players (Up to GW10):
+| Name               |   Games |   Goals |   Assists |   Avg ICT |   Points/Game |
+|:-------------------|--------:|--------:|----------:|----------:|--------------:|
+| Bukayo Saka        |      10 |       3 |         7 |      11.2 |           6.5 |
+| Mohamed Salah      |      10 |       7 |         5 |      11.9 |           9.3 |
+| Cole Palmer        |      10 |       7 |         5 |      10.6 |           8.2 |
+| Bryan Mbeumo       |      10 |       8 |         0 |       9.1 |           7.1 |
+| Alejandro Garnacho |      10 |       2 |         1 |       6.0 |           3.4 |
+
+
+FWD:
+| name                 | team           | prediction_range   |   actual_points |   confidence_score |   price |
+|:---------------------|:---------------|:-------------------|----------------:|-------------------:|--------:|
+| Erling Haaland       | Man City       | 10.8 (8.8-12.7)    |               5 |               0.64 |   15.40 |
+| Chris Wood           | Nott'm Forest  | 5.4 (3.5-7.4)      |               2 |               0.52 |    6.40 |
+| Nicolas Jackson      | Chelsea        | 4.1 (2.2-6.0)      |               2 |               0.47 |    7.90 |
+| Jean-Philippe Mateta | Crystal Palace | 3.7 (1.8-5.7)      |               2 |               0.46 |    7.30 |
+| Danny Welbeck        | Brighton       | 3.7 (1.8-5.6)      |               2 |               0.48 |    5.90 |
+
+Position Insights (FWD):
+- Average Predicted Points: 5.54
+- Average Confidence Score: 0.51
+- Total Actual Points: 13.00
+- Combined Price: £42.9m
+
+Season Statistics for Selected Players (Up to GW10):
+| Name                 |   Games |   Goals |   Assists |   Avg ICT |   Points/Game |
+|:---------------------|--------:|--------:|----------:|----------:|--------------:|
+| Erling Haaland       |      10 |      11 |         0 |      11.4 |           7.7 |
+| Chris Wood           |      10 |       8 |         0 |       7.0 |           6.6 |
+| Nicolas Jackson      |      10 |       6 |         3 |       7.9 |           5.8 |
+| Jean-Philippe Mateta |      10 |       3 |         0 |       3.8 |           3.3 |
+| Danny Welbeck        |      10 |       6 |         2 |       7.5 |           6.2 |
+
+
+Predicted Gameweek 11 Summary:
+Total Actual Points Across All Positions: 78
+
+--------------------------------------------------------------------------------

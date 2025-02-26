@@ -1,0 +1,111 @@
+--------------------------------------------------------------------------------
+
+
+Top 5 Predicted Performers for GW 7 Season 2024_25
+Generated on: 2025-02-26 21:51:05
+
+
+GK:
+| name              | team           | prediction_range   |   actual_points |   confidence_score |   price |
+|:------------------|:---------------|:-------------------|----------------:|-------------------:|--------:|
+| Jordan Pickford   | Everton        | 4.5 (3.1-5.8)      |              15 |               0.52 |    4.80 |
+| André Onana       | Man Utd        | 4.1 (2.8-5.5)      |               6 |               0.55 |    5.00 |
+| Dean Henderson    | Crystal Palace | 4.1 (2.7-5.4)      |               3 |               0.57 |    4.50 |
+| Nick Pope         | Newcastle      | 3.8 (2.5-5.2)      |               6 |               0.59 |    5.00 |
+| Guglielmo Vicario | Spurs          | 3.8 (2.5-5.2)      |               1 |               0.57 |    5.00 |
+
+Position Insights (GK):
+- Average Predicted Points: 4.06
+- Average Confidence Score: 0.56
+- Total Actual Points: 31.00
+- Combined Price: £24.3m
+
+Season Statistics for Selected Players (Up to GW6):
+| Name              |   Games |   Clean Sheets |   Total Saves |   Saves/Game |
+|:------------------|--------:|---------------:|--------------:|-------------:|
+| Jordan Pickford   |       6 |              0 |            17 |          2.8 |
+| André Onana       |       6 |              3 |            18 |          3.0 |
+| Dean Henderson    |       6 |              1 |            19 |          3.2 |
+| Nick Pope         |       6 |              1 |            29 |          4.8 |
+| Guglielmo Vicario |       6 |              2 |            14 |          2.3 |
+
+
+DEF:
+| name                         | team      | prediction_range   |   actual_points |   confidence_score |   price |
+|:-----------------------------|:----------|:-------------------|----------------:|-------------------:|--------:|
+| Riccardo Calafiori           | Arsenal   | 3.8 (1.6-6.0)      |               2 |               0.53 |    5.80 |
+| Gabriel dos Santos Magalhães | Arsenal   | 3.8 (1.6-6.0)      |               2 |               0.47 |    6.10 |
+| Max Kilman                   | West Ham  | 3.7 (1.5-5.9)      |               2 |               0.50 |    4.50 |
+| Trent Alexander-Arnold       | Liverpool | 3.7 (1.5-5.9)      |               8 |               0.44 |    7.10 |
+| Ibrahima Konaté              | Liverpool | 3.6 (1.4-5.9)      |               6 |               0.49 |    5.10 |
+
+Position Insights (DEF):
+- Average Predicted Points: 3.72
+- Average Confidence Score: 0.49
+- Total Actual Points: 20.00
+- Combined Price: £28.6m
+
+Season Statistics for Selected Players (Up to GW6):
+| Name                         |   Games |   Clean Sheets |   Goals |   Assists |
+|:-----------------------------|--------:|---------------:|--------:|----------:|
+| Riccardo Calafiori           |       6 |              0 |       1 |         0 |
+| Gabriel dos Santos Magalhães |       6 |              3 |       2 |         0 |
+| Max Kilman                   |       6 |              1 |       0 |         1 |
+| Trent Alexander-Arnold       |       6 |              4 |       0 |         1 |
+| Ibrahima Konaté              |       6 |              3 |       1 |         1 |
+
+
+MID:
+| name                     | team        | prediction_range   |   actual_points |   confidence_score |   price |
+|:-------------------------|:------------|:-------------------|----------------:|-------------------:|--------:|
+| Mohamed Salah            | Liverpool   | 6.6 (4.5-8.8)      |               3 |               0.48 |   12.80 |
+| Cole Palmer              | Chelsea     | 5.8 (3.7-8.0)      |               6 |               0.47 |   10.60 |
+| Gabriel Martinelli Silva | Arsenal     | 5.1 (3.0-7.3)      |               6 |               0.55 |    6.90 |
+| Luis Díaz                | Liverpool   | 5.0 (2.9-7.2)      |               1 |               0.47 |    8.00 |
+| Marcus Tavernier         | Bournemouth | 4.9 (2.8-7.1)      |               2 |               0.59 |    5.50 |
+
+Position Insights (MID):
+- Average Predicted Points: 5.50
+- Average Confidence Score: 0.51
+- Total Actual Points: 18.00
+- Combined Price: £43.8m
+
+Season Statistics for Selected Players (Up to GW6):
+| Name                     |   Games |   Goals |   Assists |   Avg ICT |   Points/Game |
+|:-------------------------|--------:|--------:|----------:|----------:|--------------:|
+| Mohamed Salah            |       6 |       4 |         4 |      13.7 |           9.8 |
+| Cole Palmer              |       6 |       6 |         4 |      11.8 |          10.2 |
+| Gabriel Martinelli Silva |       6 |       1 |         2 |       6.5 |           4.7 |
+| Luis Díaz                |       6 |       5 |         1 |       9.5 |           8.8 |
+| Marcus Tavernier         |       6 |       1 |         1 |       8.9 |           3.7 |
+
+
+FWD:
+| name                     | team          | prediction_range   |   actual_points |   confidence_score |   price |
+|:-------------------------|:--------------|:-------------------|----------------:|-------------------:|--------:|
+| Erling Haaland           | Man City      | 11.5 (9.5-13.4)    |               2 |               0.66 |   15.30 |
+| Kai Havertz              | Arsenal       | 5.1 (3.2-7.1)      |               8 |               0.54 |    8.20 |
+| Ollie Watkins            | Aston Villa   | 4.7 (2.8-6.6)      |               2 |               0.49 |    9.00 |
+| Chris Wood               | Nott'm Forest | 3.9 (2.0-5.9)      |               8 |               0.45 |    6.20 |
+| Dominic Solanke-Mitchell | Spurs         | 3.9 (2.0-5.8)      |               5 |               0.48 |    7.50 |
+
+Position Insights (FWD):
+- Average Predicted Points: 5.83
+- Average Confidence Score: 0.52
+- Total Actual Points: 25.00
+- Combined Price: £46.2m
+
+Season Statistics for Selected Players (Up to GW6):
+| Name                     |   Games |   Goals |   Assists |   Avg ICT |   Points/Game |
+|:-------------------------|--------:|--------:|----------:|----------:|--------------:|
+| Erling Haaland           |       6 |      10 |         0 |      14.0 |          10.8 |
+| Kai Havertz              |       6 |       3 |         1 |       8.1 |           5.3 |
+| Ollie Watkins            |       6 |       4 |         2 |       7.5 |           6.5 |
+| Chris Wood               |       6 |       3 |         0 |       5.7 |           5.2 |
+| Dominic Solanke-Mitchell |       6 |       2 |         0 |       5.9 |           2.7 |
+
+
+Predicted Gameweek 7 Summary:
+Total Actual Points Across All Positions: 94
+
+--------------------------------------------------------------------------------

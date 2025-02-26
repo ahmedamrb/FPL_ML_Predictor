@@ -1,0 +1,149 @@
+   def pick_optimal_team(self, predictions_df, gw):
+        """
+        Pick the optimal team for the given gameweek using ILP to maximize predicted points.
+        
+        Args:
+            predictions_df (pd.DataFrame): DataFrame containing player predictions.
+            gw (int): Gameweek number.
+        
+        Returns:
+            best_team (dict): Dictionary of DataFrames by position.
+            output (list): Formatted output lines.
+            actual_points_xi (int): Total actual points of starting XI.
+        
+        Raises:
+            ValueError: If no valid team can be formed due to budget or other constraints.
+        """
+        # Filter data for the specific gameweek
+        gw -= 1
+        gw_predictions = predictions_df[predictions_df['GW'] == gw].copy()
+        gw_predictions['actual_points'] = gw_predictions['actual_points'].fillna(0)
+        
+        # Check if there are enough players
+        if gw_predictions.empty:
+            raise ValueError(f"No player data available for gameweek {gw}.")
+        
+        best_team = None
+        best_points = -1
+        best_formation = None
+        feasible_formations = 0
+        
+        # Iterate over each valid formation with tqdm progress bar
+        for formation in tqdm(self.valid_formations, desc="Evaluating formations"):
+            try:
+                def_count, mid_count, fwd_count = formation
+                # Set up the ILP problem
+                prob = LpProblem(f"Formation_{def_count}_{mid_count}_{fwd_count}", LpMaximize)
+                
+                # Create binary variables for each player: 1 if selected, 0 otherwise
+                player_vars = {i: LpVariable(f"player_{i}", cat=LpBinary) for i in gw_predictions.index}
+                # Create binary variables for starting XI: 1 if in starting XI, 0 otherwise
+                starting_vars = {i: LpVariable(f"starting_{i}", cat=LpBinary) for i in gw_predictions.index}
+                
+                # Objective: Maximize sum of predicted_next_points for starting XI
+                prob += lpSum(gw_predictions.loc[i, 'predicted_next_points'] * starting_vars[i] 
+                            for i in gw_predictions.index)
+                
+                # Constraints
+                # 1. Position constraints for full squad (2 GK, 5 DEF, 5 MID, 3 FWD)
+                for pos, count in self.position_requirements.items():
+                    prob += lpSum(player_vars[i] for i in gw_predictions[gw_predictions['position'] == pos].index) == count
+                
+                # 2. Starting XI position constraints
+                prob += lpSum(starting_vars[i] for i in gw_predictions[gw_predictions['position'] == 'GK'].index) == 1
+                prob += lpSum(starting_vars[i] for i in gw_predictions[gw_predictions['position'] == 'DEF'].index) == def_count
+                prob += lpSum(starting_vars[i] for i in gw_predictions[gw_predictions['position'] == 'MID'].index) == mid_count
+                prob += lpSum(starting_vars[i] for i in gw_predictions[gw_predictions['position'] == 'FWD'].index) == fwd_count
+                
+                # 3. Total players in starting XI must be 11
+                prob += lpSum(starting_vars[i] for i in gw_predictions.index) == 11
+                
+                # 4. Link player selection and starting XI (can't start if not selected)
+                for i in gw_predictions.index:
+                    prob += starting_vars[i] <= player_vars[i]
+                
+                # 5. Budget constraint (total value ≤ 1000)
+                prob += lpSum(gw_predictions.loc[i, 'value'] * player_vars[i] 
+                            for i in gw_predictions.index) <= self.budget_limit
+                
+                # 6. Team constraint: ≤3 players per team across full squad
+                for team in gw_predictions['team'].unique():
+                    prob += lpSum(player_vars[i] for i in gw_predictions[gw_predictions['team'] == team].index) <= 3
+                
+                # Solve the ILP problem
+                prob.solve()
+                
+                # Check if a feasible solution was found
+                if LpStatus[prob.status] != 'Optimal':
+                    continue  # Skip infeasible formations
+                
+                feasible_formations += 1
+                
+                # Extract selected players and starting XI
+                selected_indices = [i for i in gw_predictions.index if player_vars[i].value() > 0.5]
+                starting_indices = [i for i in gw_predictions.index if starting_vars[i].value() > 0.5]
+                
+                # Sort substitutes by value (cheapest first) and avoid stacking from same team
+                selected_df = gw_predictions.loc[selected_indices].copy()
+                starting_df = gw_predictions.loc[starting_indices]
+                sub_indices = list(set(selected_indices) - set(starting_indices))
+                subs_df = gw_predictions.loc[sub_indices].sort_values('value')  # Cheapest subs first
+                
+                # Limit subs from the same team (≤1 additional per team beyond starting XI)
+                team_counts_starting = starting_df['team'].value_counts()
+                subs_selected = []
+                for i in subs_df.index:
+                    team = gw_predictions.loc[i, 'team']
+                    current_count = len([p for p in subs_selected if gw_predictions.loc[p, 'team'] == team]) + \
+                                team_counts_starting.get(team, 0)
+                    if current_count < 3:  # Respect overall team limit
+                        subs_selected.append(i)
+                        if len(subs_selected) == 4:  # Stop at 4 subs
+                            break
+                
+                # Create squad DataFrames by position
+                squad = {}
+                for pos in ['GK', 'DEF', 'MID', 'FWD']:
+                    pos_players = selected_df[selected_df['position'] == pos]
+                    squad[pos] = pos_players
+                
+                # Calculate total predicted points for starting XI
+                starting_xi_points = sum(gw_predictions.loc[i, 'predicted_next_points'] 
+                                    for i in starting_indices)
+                
+                # Update best team if this formation yields higher points
+                if starting_xi_points > best_points:
+                    best_team = squad
+                    best_points = starting_xi_points
+                    best_formation = formation
+            
+            except Exception as e:
+                print(f"Skipping formation {formation} due to error: {str(e)}")
+                continue
+        
+        # Check if any feasible team was found
+        if best_team is None:
+            raise ValueError(f"Could not create a valid team for gameweek {gw}. Budget or constraints too tight.")
+        
+        # Define counts for starting players based on best_formation
+        counts = {'GK': 1, 'DEF': best_formation[0], 'MID': best_formation[1], 'FWD': best_formation[2]}
+
+        # Select starting players for each position and concatenate into a single DataFrame
+        starting_players = pd.concat([best_team[pos].head(counts[pos]) 
+                                    for pos in ['GK', 'DEF', 'MID', 'FWD']])
+        
+        # Select captain from starting XI based on highest score multiplier
+        captain_score = starting_players['predicted_next_points'] * starting_players['selected'] * \
+                        starting_players['points_ewm_3'] * starting_players['points_ewm_6']
+        captain = starting_players.loc[captain_score.idxmax()]
+        captain_name = captain['name']
+        
+        # Generate output and actual points
+        output, actual_points_xi = self._print_squad(best_team, best_formation, captain_name, 
+                                                    gw_predictions['season'].iloc[0], gw)
+        
+        # Generate HTML report
+        self.generate_html_report(best_team, best_formation, captain_name, 
+                                gw_predictions['season'].iloc[0], gw)
+        
+        return best_team, output, actual_points_xi

@@ -1,0 +1,111 @@
+--------------------------------------------------------------------------------
+
+
+Top 5 Predicted Performers for GW 12 Season 2024_25
+Generated on: 2025-02-26 21:51:16
+
+
+GK:
+| name                     | team        | prediction_range   |   actual_points |   confidence_score |   price |
+|:-------------------------|:------------|:-------------------|----------------:|-------------------:|--------:|
+| Nick Pope                | Newcastle   | 4.1 (2.7-5.4)      |               2 |               0.60 |    5.00 |
+| Jordan Pickford          | Everton     | 4.0 (2.7-5.4)      |               6 |               0.50 |    4.90 |
+| Bernd Leno               | Fulham      | 4.0 (2.7-5.4)      |               0 |               0.62 |    5.00 |
+| Emiliano Martínez Romero | Aston Villa | 4.0 (2.6-5.3)      |               2 |               0.60 |    5.00 |
+| Mark Flekken             | Brentford   | 3.9 (2.6-5.3)      |               9 |               0.59 |    4.50 |
+
+Position Insights (GK):
+- Average Predicted Points: 4.01
+- Average Confidence Score: 0.58
+- Total Actual Points: 19.00
+- Combined Price: £24.4m
+
+Season Statistics for Selected Players (Up to GW11):
+| Name                     |   Games |   Clean Sheets |   Total Saves |   Saves/Game |
+|:-------------------------|--------:|---------------:|--------------:|-------------:|
+| Nick Pope                |      11 |              3 |            42 |          3.8 |
+| Jordan Pickford          |      11 |              3 |            31 |          2.8 |
+| Bernd Leno               |      11 |              2 |            34 |          3.1 |
+| Emiliano Martínez Romero |      11 |              1 |            27 |          2.5 |
+| Mark Flekken             |      11 |              0 |            55 |          5.0 |
+
+
+DEF:
+| name             | team      | prediction_range   |   actual_points |   confidence_score |   price |
+|:-----------------|:----------|:-------------------|----------------:|-------------------:|--------:|
+| Antonee Robinson | Fulham    | 4.5 (2.3-6.7)      |               0 |               0.56 |    4.70 |
+| James Tarkowski  | Everton   | 4.3 (2.1-6.6)      |               7 |               0.48 |    4.80 |
+| Lewis Hall       | Newcastle | 4.0 (1.8-6.2)      |               1 |               0.47 |    4.30 |
+| Virgil van Dijk  | Liverpool | 4.0 (1.7-6.2)      |               1 |               0.54 |    6.20 |
+| Fabian Schär     | Newcastle | 3.7 (1.5-5.9)      |               1 |               0.51 |    5.40 |
+
+Position Insights (DEF):
+- Average Predicted Points: 4.10
+- Average Confidence Score: 0.51
+- Total Actual Points: 10.00
+- Combined Price: £25.4m
+
+Season Statistics for Selected Players (Up to GW11):
+| Name             |   Games |   Clean Sheets |   Goals |   Assists |
+|:-----------------|--------:|---------------:|--------:|----------:|
+| Antonee Robinson |      11 |              2 |       0 |         3 |
+| James Tarkowski  |      11 |              3 |       0 |         0 |
+| Lewis Hall       |      11 |              3 |       0 |         1 |
+| Virgil van Dijk  |      11 |              6 |       1 |         1 |
+| Fabian Schär     |      11 |              2 |       1 |         0 |
+
+
+MID:
+| name               | team      | prediction_range   |   actual_points |   confidence_score |   price |
+|:-------------------|:----------|:-------------------|----------------:|-------------------:|--------:|
+| Mohamed Salah      | Liverpool | 7.0 (4.8-9.1)      |              13 |               0.49 |   12.80 |
+| Cole Palmer        | Chelsea   | 6.2 (4.0-8.3)      |               2 |               0.48 |   11.00 |
+| Phil Foden         | Man City  | 5.2 (3.1-7.4)      |               2 |               0.49 |    9.30 |
+| Alex Iwobi         | Fulham    | 5.1 (3.0-7.2)      |               7 |               0.52 |    5.50 |
+| Alejandro Garnacho | Man Utd   | 4.9 (2.8-7.1)      |               2 |               0.60 |    6.40 |
+
+Position Insights (MID):
+- Average Predicted Points: 5.68
+- Average Confidence Score: 0.52
+- Total Actual Points: 26.00
+- Combined Price: £45.0m
+
+Season Statistics for Selected Players (Up to GW11):
+| Name               |   Games |   Goals |   Assists |   Avg ICT |   Points/Game |
+|:-------------------|--------:|--------:|----------:|----------:|--------------:|
+| Mohamed Salah      |      11 |       8 |         6 |      12.0 |           9.7 |
+| Cole Palmer        |      11 |       7 |         5 |      10.0 |           7.6 |
+| Phil Foden         |      11 |       0 |         1 |       4.0 |           1.5 |
+| Alex Iwobi         |      11 |       2 |         2 |       7.2 |           4.3 |
+| Alejandro Garnacho |      11 |       3 |         1 |       5.9 |           3.6 |
+
+
+FWD:
+| name            | team          | prediction_range   |   actual_points |   confidence_score |   price |
+|:----------------|:--------------|:-------------------|----------------:|-------------------:|--------:|
+| Erling Haaland  | Man City      | 15.5 (13.5-17.4)   |               2 |               0.72 |   15.30 |
+| Chris Wood      | Nott'm Forest | 5.6 (3.7-7.6)      |               1 |               0.53 |    6.60 |
+| Nicolas Jackson | Chelsea       | 4.2 (2.2-6.1)      |              12 |               0.48 |    7.90 |
+| Danny Welbeck   | Brighton      | 4.0 (2.1-5.9)      |               2 |               0.49 |    5.90 |
+| Liam Delap      | Ipswich       | 3.9 (2.0-5.9)      |               2 |               0.48 |    5.60 |
+
+Position Insights (FWD):
+- Average Predicted Points: 6.65
+- Average Confidence Score: 0.54
+- Total Actual Points: 19.00
+- Combined Price: £41.3m
+
+Season Statistics for Selected Players (Up to GW11):
+| Name            |   Games |   Goals |   Assists |   Avg ICT |   Points/Game |
+|:----------------|--------:|--------:|----------:|----------:|--------------:|
+| Erling Haaland  |      11 |      12 |         0 |      11.5 |           7.5 |
+| Chris Wood      |      11 |       8 |         0 |       6.7 |           6.2 |
+| Nicolas Jackson |      11 |       6 |         3 |       7.6 |           5.5 |
+| Danny Welbeck   |      11 |       6 |         2 |       7.0 |           5.8 |
+| Liam Delap      |      11 |       6 |         1 |       5.0 |           4.6 |
+
+
+Predicted Gameweek 12 Summary:
+Total Actual Points Across All Positions: 74
+
+--------------------------------------------------------------------------------

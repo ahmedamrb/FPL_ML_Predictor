@@ -1,0 +1,111 @@
+--------------------------------------------------------------------------------
+
+
+Top 5 Predicted Performers for GW 13 Season 2024_25
+Generated on: 2025-02-26 21:51:19
+
+
+GK:
+| name                      | team      | prediction_range   |   actual_points |   confidence_score |   price |
+|:--------------------------|:----------|:-------------------|----------------:|-------------------:|--------:|
+| Mark Flekken              | Brentford | 4.3 (3.0-5.7)      |               2 |               0.61 |    4.50 |
+| David Raya Martin         | Arsenal   | 4.3 (3.0-5.7)      |               2 |               0.57 |    5.50 |
+| Bernd Leno                | Fulham    | 4.2 (2.9-5.6)      |               2 |               0.63 |    5.00 |
+| Jordan Pickford           | Everton   | 4.1 (2.7-5.4)      |               0 |               0.51 |    4.90 |
+| Ederson Santana de Moraes | Man City  | 4.0 (2.7-5.3)      |               0 |               0.54 |    5.50 |
+
+Position Insights (GK):
+- Average Predicted Points: 4.20
+- Average Confidence Score: 0.57
+- Total Actual Points: 6.00
+- Combined Price: £25.4m
+
+Season Statistics for Selected Players (Up to GW12):
+| Name                      |   Games |   Clean Sheets |   Total Saves |   Saves/Game |
+|:--------------------------|--------:|---------------:|--------------:|-------------:|
+| Mark Flekken              |      12 |              1 |            60 |          5.0 |
+| David Raya Martin         |      12 |              4 |            34 |          2.8 |
+| Bernd Leno                |      12 |              2 |            35 |          2.9 |
+| Jordan Pickford           |      12 |              4 |            33 |          2.8 |
+| Ederson Santana de Moraes |      12 |              2 |            28 |          2.3 |
+
+
+DEF:
+| name                 | team          | prediction_range   |   actual_points |   confidence_score |   price |
+|:---------------------|:--------------|:-------------------|----------------:|-------------------:|--------:|
+| Joško Gvardiol       | Man City      | 4.2 (1.9-6.4)      |               0 |               0.50 |    6.30 |
+| Ola Aina             | Nott'm Forest | 4.1 (1.9-6.4)      |               8 |               0.46 |    4.80 |
+| Diogo Dalot Teixeira | Man Utd       | 4.0 (1.7-6.2)      |               6 |               0.51 |    5.20 |
+| Joël Veltman         | Brighton      | 3.9 (1.6-6.1)      |               0 |               0.52 |    4.50 |
+| Sepp van den Berg    | Brentford     | 3.8 (1.6-6.0)      |               2 |               0.55 |    4.10 |
+
+Position Insights (DEF):
+- Average Predicted Points: 3.98
+- Average Confidence Score: 0.51
+- Total Actual Points: 16.00
+- Combined Price: £24.9m
+
+Season Statistics for Selected Players (Up to GW12):
+| Name                 |   Games |   Clean Sheets |   Goals |   Assists |
+|:---------------------|--------:|---------------:|--------:|----------:|
+| Joško Gvardiol       |      12 |              2 |       3 |         0 |
+| Ola Aina             |      12 |              4 |       1 |         0 |
+| Diogo Dalot Teixeira |      12 |              4 |       0 |         1 |
+| Joël Veltman         |      12 |              3 |       0 |         0 |
+| Sepp van den Berg    |      12 |              1 |       0 |         0 |
+
+
+MID:
+| name               | team      | prediction_range   |   actual_points |   confidence_score |   price |
+|:-------------------|:----------|:-------------------|----------------:|-------------------:|--------:|
+| Mohamed Salah      | Liverpool | 7.8 (5.7-10.0)     |              13 |               0.52 |   13.00 |
+| Bukayo Saka        | Arsenal   | 6.9 (4.7-9.0)      |              18 |               0.53 |   10.10 |
+| Cole Palmer        | Chelsea   | 6.6 (4.4-8.7)      |              14 |               0.49 |   10.90 |
+| Mitoma Kaoru       | Brighton  | 4.8 (2.7-7.0)      |              10 |               0.52 |    6.40 |
+| Alejandro Garnacho | Man Utd   | 4.7 (2.6-6.9)      |               1 |               0.60 |    6.40 |
+
+Position Insights (MID):
+- Average Predicted Points: 6.16
+- Average Confidence Score: 0.53
+- Total Actual Points: 56.00
+- Combined Price: £46.8m
+
+Season Statistics for Selected Players (Up to GW12):
+| Name               |   Games |   Goals |   Assists |   Avg ICT |   Points/Game |
+|:-------------------|--------:|--------:|----------:|----------:|--------------:|
+| Mohamed Salah      |      12 |      10 |         6 |      12.5 |          10.0 |
+| Bukayo Saka        |      12 |       4 |         8 |      10.9 |           6.7 |
+| Cole Palmer        |      12 |       7 |         5 |       9.7 |           7.2 |
+| Mitoma Kaoru       |      12 |       2 |         3 |       6.6 |           3.9 |
+| Alejandro Garnacho |      12 |       3 |         1 |       5.9 |           3.5 |
+
+
+FWD:
+| name                     | team          | prediction_range   |   actual_points |   confidence_score |   price |
+|:-------------------------|:--------------|:-------------------|----------------:|-------------------:|--------:|
+| Erling Haaland           | Man City      | 9.0 (7.0-10.9)     |               2 |               0.60 |   15.20 |
+| Dominic Solanke-Mitchell | Spurs         | 4.4 (2.5-6.3)      |               0 |               0.50 |    7.70 |
+| Chris Wood               | Nott'm Forest | 4.1 (2.2-6.0)      |               9 |               0.46 |    6.60 |
+| Ollie Watkins            | Aston Villa   | 3.8 (1.9-5.8)      |               2 |               0.45 |    9.00 |
+| Danny Welbeck            | Brighton      | 3.7 (1.7-5.6)      |               2 |               0.48 |    6.00 |
+
+Position Insights (FWD):
+- Average Predicted Points: 4.99
+- Average Confidence Score: 0.50
+- Total Actual Points: 15.00
+- Combined Price: £44.5m
+
+Season Statistics for Selected Players (Up to GW12):
+| Name                     |   Games |   Goals |   Assists |   Avg ICT |   Points/Game |
+|:-------------------------|--------:|--------:|----------:|----------:|--------------:|
+| Erling Haaland           |      12 |      12 |         0 |      11.3 |           7.0 |
+| Dominic Solanke-Mitchell |      12 |       4 |         3 |       5.8 |           4.0 |
+| Chris Wood               |      12 |       8 |         0 |       6.2 |           5.8 |
+| Ollie Watkins            |      12 |       6 |         2 |       6.4 |           5.2 |
+| Danny Welbeck            |      12 |       6 |         2 |       6.8 |           5.5 |
+
+
+Predicted Gameweek 13 Summary:
+Total Actual Points Across All Positions: 93
+
+--------------------------------------------------------------------------------

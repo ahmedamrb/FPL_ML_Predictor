@@ -1,0 +1,111 @@
+--------------------------------------------------------------------------------
+
+
+Top 5 Predicted Performers for GW 22 Season 2024_25
+Generated on: 2025-02-26 21:51:36
+
+
+GK:
+| name                 | team          | prediction_range   |   actual_points |   confidence_score |   price |
+|:---------------------|:--------------|:-------------------|----------------:|-------------------:|--------:|
+| Matz Sels            | Nott'm Forest | 4.0 (2.7-5.4)      |               1 |               0.55 |    4.90 |
+| Stefan Ortega Moreno | Man City      | 3.9 (2.6-5.3)      |               0 |               0.63 |    5.20 |
+| André Onana          | Man Utd       | 3.7 (2.4-5.1)      |               1 |               0.53 |    5.10 |
+| Aaron Ramsdale       | Southampton   | 3.7 (2.4-5.1)      |               1 |               0.57 |    4.40 |
+| David Raya Martin    | Arsenal       | 3.6 (2.2-4.9)      |               1 |               0.54 |    5.60 |
+
+Position Insights (GK):
+- Average Predicted Points: 3.80
+- Average Confidence Score: 0.56
+- Total Actual Points: 4.00
+- Combined Price: £25.2m
+
+Season Statistics for Selected Players (Up to GW21):
+| Name                 |   Games |   Clean Sheets |   Total Saves |   Saves/Game |
+|:---------------------|--------:|---------------:|--------------:|-------------:|
+| Matz Sels            |      21 |              9 |            63 |          3.0 |
+| Stefan Ortega Moreno |      21 |              2 |            24 |          1.1 |
+| André Onana          |      21 |              6 |            56 |          2.7 |
+| Aaron Ramsdale       |      21 |              2 |            61 |          2.9 |
+| David Raya Martin    |      21 |              7 |            50 |          2.4 |
+
+
+DEF:
+| name                   | team           | prediction_range   |   actual_points |   confidence_score |   price |
+|:-----------------------|:---------------|:-------------------|----------------:|-------------------:|--------:|
+| Antonee Robinson       | Fulham         | 5.0 (2.8-7.2)      |               8 |               0.58 |    5.00 |
+| Trent Alexander-Arnold | Liverpool      | 4.6 (2.4-6.8)      |              11 |               0.48 |    7.20 |
+| Nikola Milenković      | Nott'm Forest  | 3.9 (1.6-6.1)      |               1 |               0.52 |    4.80 |
+| Tyrick Mitchell        | Crystal Palace | 3.8 (1.6-6.1)      |               6 |               0.51 |    4.80 |
+| Maxence Lacroix        | Crystal Palace | 3.5 (1.3-5.7)      |               7 |               0.48 |    4.50 |
+
+Position Insights (DEF):
+- Average Predicted Points: 4.16
+- Average Confidence Score: 0.51
+- Total Actual Points: 33.00
+- Combined Price: £26.3m
+
+Season Statistics for Selected Players (Up to GW21):
+| Name                   |   Games |   Clean Sheets |   Goals |   Assists |
+|:-----------------------|--------:|---------------:|--------:|----------:|
+| Antonee Robinson       |      21 |              3 |       0 |         9 |
+| Trent Alexander-Arnold |      20 |              7 |       1 |         4 |
+| Nikola Milenković      |      21 |              9 |       2 |         1 |
+| Tyrick Mitchell        |      21 |              6 |       0 |         3 |
+| Maxence Lacroix        |      18 |              5 |       1 |         1 |
+
+
+MID:
+| name          | team      | prediction_range   |   actual_points |   confidence_score |   price |
+|:--------------|:----------|:-------------------|----------------:|-------------------:|--------:|
+| Cole Palmer   | Chelsea   | 6.8 (4.6-8.9)      |               2 |               0.50 |   11.40 |
+| Mohamed Salah | Liverpool | 6.1 (4.0-8.3)      |               3 |               0.46 |   13.70 |
+| Bryan Mbeumo  | Brentford | 5.8 (3.7-8.0)      |               2 |               0.50 |    7.80 |
+| Phil Foden    | Man City  | 5.3 (3.1-7.4)      |              19 |               0.49 |    9.20 |
+| Son Heung-min | Spurs     | 5.1 (3.0-7.3)      |               2 |               0.50 |    9.80 |
+
+Position Insights (MID):
+- Average Predicted Points: 5.82
+- Average Confidence Score: 0.49
+- Total Actual Points: 28.00
+- Combined Price: £51.9m
+
+Season Statistics for Selected Players (Up to GW21):
+| Name          |   Games |   Goals |   Assists |   Avg ICT |   Points/Game |
+|:--------------|--------:|--------:|----------:|----------:|--------------:|
+| Cole Palmer   |      21 |      14 |         7 |      11.0 |           7.8 |
+| Mohamed Salah |      20 |      18 |        13 |      13.9 |          10.6 |
+| Bryan Mbeumo  |      21 |      13 |         3 |       9.0 |           6.6 |
+| Phil Foden    |      21 |       4 |         2 |       5.4 |           2.9 |
+| Son Heung-min |      21 |       6 |         6 |       6.6 |           4.3 |
+
+
+FWD:
+| name                     | team          | prediction_range   |   actual_points |   confidence_score |   price |
+|:-------------------------|:--------------|:-------------------|----------------:|-------------------:|--------:|
+| Chris Wood               | Nott'm Forest | 5.8 (3.9-7.8)      |              12 |               0.53 |    6.80 |
+| Erling Haaland           | Man City      | 5.8 (3.9-7.7)      |               6 |               0.51 |   14.80 |
+| Raúl Jiménez             | Fulham        | 4.7 (2.7-6.6)      |               2 |               0.53 |    5.70 |
+| Nicolas Jackson          | Chelsea       | 4.4 (2.4-6.3)      |               2 |               0.49 |    8.10 |
+| Dominic Solanke-Mitchell | Spurs         | 3.8 (1.9-5.8)      |               0 |               0.47 |    7.50 |
+
+Position Insights (FWD):
+- Average Predicted Points: 4.90
+- Average Confidence Score: 0.51
+- Total Actual Points: 22.00
+- Combined Price: £42.9m
+
+Season Statistics for Selected Players (Up to GW21):
+| Name                     |   Games |   Goals |   Assists |   Avg ICT |   Points/Game |
+|:-------------------------|--------:|--------:|----------:|----------:|--------------:|
+| Chris Wood               |      21 |      13 |         1 |       5.5 |           5.9 |
+| Erling Haaland           |      21 |      16 |         1 |       9.8 |           6.0 |
+| Raúl Jiménez             |      21 |       8 |         2 |       5.5 |           4.2 |
+| Nicolas Jackson          |      21 |       9 |         5 |       7.0 |           4.8 |
+| Dominic Solanke-Mitchell |      21 |       7 |         5 |       5.4 |           4.0 |
+
+
+Predicted Gameweek 22 Summary:
+Total Actual Points Across All Positions: 87
+
+--------------------------------------------------------------------------------

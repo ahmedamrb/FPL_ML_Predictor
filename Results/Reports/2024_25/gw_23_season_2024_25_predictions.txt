@@ -1,0 +1,111 @@
+--------------------------------------------------------------------------------
+
+
+Top 5 Predicted Performers for GW 23 Season 2024_25
+Generated on: 2025-02-26 21:51:37
+
+
+GK:
+| name                     | team           | prediction_range   |   actual_points |   confidence_score |   price |
+|:-------------------------|:---------------|:-------------------|----------------:|-------------------:|--------:|
+| Dean Henderson           | Crystal Palace | 4.2 (2.8-5.5)      |               1 |               0.58 |    4.50 |
+| Bart Verbruggen          | Brighton       | 3.9 (2.6-5.3)      |               1 |               0.54 |    4.50 |
+| Mark Flekken             | Brentford      | 3.8 (2.5-5.2)      |               3 |               0.58 |    4.40 |
+| Alisson Ramses Becker    | Liverpool      | 3.8 (2.4-5.1)      |               2 |               0.51 |    5.40 |
+| Emiliano Martínez Romero | Aston Villa    | 3.7 (2.4-5.1)      |               2 |               0.59 |    5.00 |
+
+Position Insights (GK):
+- Average Predicted Points: 3.88
+- Average Confidence Score: 0.56
+- Total Actual Points: 9.00
+- Combined Price: £23.8m
+
+Season Statistics for Selected Players (Up to GW22):
+| Name                     |   Games |   Clean Sheets |   Total Saves |   Saves/Game |
+|:-------------------------|--------:|---------------:|--------------:|-------------:|
+| Dean Henderson           |      22 |              6 |            61 |          2.8 |
+| Bart Verbruggen          |      22 |              4 |            56 |          2.5 |
+| Mark Flekken             |      22 |              2 |           101 |          4.6 |
+| Alisson Ramses Becker    |      21 |              6 |            30 |          1.4 |
+| Emiliano Martínez Romero |      22 |              3 |            57 |          2.6 |
+
+
+DEF:
+| name                   | team           | prediction_range   |   actual_points |   confidence_score |   price |
+|:-----------------------|:---------------|:-------------------|----------------:|-------------------:|--------:|
+| Trent Alexander-Arnold | Liverpool      | 4.4 (2.2-6.7)      |               5 |               0.47 |    7.20 |
+| Virgil van Dijk        | Liverpool      | 4.4 (2.2-6.6)      |               2 |               0.56 |    6.40 |
+| Daniel Muñoz           | Crystal Palace | 4.0 (1.7-6.2)      |               4 |               0.48 |    4.80 |
+| Ibrahima Konaté        | Liverpool      | 3.9 (1.6-6.1)      |               5 |               0.50 |    5.10 |
+| Dan Burn               | Newcastle      | 3.8 (1.6-6.1)      |               2 |               0.52 |    4.40 |
+
+Position Insights (DEF):
+- Average Predicted Points: 4.10
+- Average Confidence Score: 0.51
+- Total Actual Points: 18.00
+- Combined Price: £27.9m
+
+Season Statistics for Selected Players (Up to GW22):
+| Name                   |   Games |   Clean Sheets |   Goals |   Assists |
+|:-----------------------|--------:|---------------:|--------:|----------:|
+| Trent Alexander-Arnold |      21 |              8 |       1 |         5 |
+| Virgil van Dijk        |      21 |              9 |       1 |         1 |
+| Daniel Muñoz           |      22 |              6 |       2 |         2 |
+| Ibrahima Konaté        |      21 |              6 |       1 |         1 |
+| Dan Burn               |      22 |              8 |       0 |         0 |
+
+
+MID:
+| name             | team      | prediction_range   |   actual_points |   confidence_score |   price |
+|:-----------------|:----------|:-------------------|----------------:|-------------------:|--------:|
+| Cole Palmer      | Chelsea   | 6.9 (4.8-9.1)      |               2 |               0.50 |   11.40 |
+| Mohamed Salah    | Liverpool | 6.4 (4.3-8.6)      |               8 |               0.47 |   13.70 |
+| Bryan Mbeumo     | Brentford | 6.4 (4.2-8.5)      |               7 |               0.52 |    7.80 |
+| Kevin De Bruyne  | Man City  | 5.3 (3.1-7.4)      |               1 |               0.52 |    9.40 |
+| Dejan Kulusevski | Spurs     | 5.2 (3.1-7.4)      |               2 |               0.56 |    6.40 |
+
+Position Insights (MID):
+- Average Predicted Points: 6.04
+- Average Confidence Score: 0.51
+- Total Actual Points: 20.00
+- Combined Price: £48.7m
+
+Season Statistics for Selected Players (Up to GW22):
+| Name             |   Games |   Goals |   Assists |   Avg ICT |   Points/Game |
+|:-----------------|--------:|--------:|----------:|----------:|--------------:|
+| Cole Palmer      |      22 |      14 |         7 |      10.8 |           7.5 |
+| Mohamed Salah    |      21 |      18 |        13 |      13.9 |          10.2 |
+| Bryan Mbeumo     |      22 |      13 |         3 |       9.1 |           6.4 |
+| Kevin De Bruyne  |      22 |       2 |         8 |       5.1 |           3.2 |
+| Dejan Kulusevski |      22 |       6 |         4 |       8.2 |           4.2 |
+
+
+FWD:
+| name                          | team          | prediction_range   |   actual_points |   confidence_score |   price |
+|:------------------------------|:--------------|:-------------------|----------------:|-------------------:|--------:|
+| Chris Wood                    | Nott'm Forest | 5.5 (3.6-7.5)      |               2 |               0.52 |    7.00 |
+| Yoane Wissa                   | Brentford     | 4.9 (3.0-6.9)      |               2 |               0.52 |    6.20 |
+| Erling Haaland                | Man City      | 4.7 (2.8-6.6)      |              12 |               0.47 |   14.80 |
+| João Pedro Junqueira de Jesus | Brighton      | 4.2 (2.3-6.1)      |               1 |               0.48 |    5.60 |
+| Ollie Watkins                 | Aston Villa   | 4.2 (2.2-6.1)      |               5 |               0.46 |    8.90 |
+
+Position Insights (FWD):
+- Average Predicted Points: 4.70
+- Average Confidence Score: 0.49
+- Total Actual Points: 22.00
+- Combined Price: £42.5m
+
+Season Statistics for Selected Players (Up to GW22):
+| Name                          |   Games |   Goals |   Assists |   Avg ICT |   Points/Game |
+|:------------------------------|--------:|--------:|----------:|----------:|--------------:|
+| Chris Wood                    |      22 |      14 |         2 |       5.8 |           6.1 |
+| Yoane Wissa                   |      22 |      10 |         3 |       5.6 |           4.5 |
+| Erling Haaland                |      22 |      17 |         1 |       9.9 |           6.0 |
+| João Pedro Junqueira de Jesus |      22 |       5 |         5 |       4.5 |           3.5 |
+| Ollie Watkins                 |      22 |      10 |         4 |       6.6 |           5.0 |
+
+
+Predicted Gameweek 23 Summary:
+Total Actual Points Across All Positions: 69
+
+--------------------------------------------------------------------------------

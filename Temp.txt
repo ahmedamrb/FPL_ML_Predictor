@@ -1,0 +1,590 @@
+import pandas as pd
+from tabulate import tabulate
+import os
+
+
+class FPLManager:
+    def __init__(self):
+        self.valid_formations = [
+            (3, 4, 3), (3, 5, 2), (4, 4, 2), (4, 3, 3), (5, 4, 1), (5, 3, 2)
+        ]
+        self.budget_limit = 1000  # In 0.1M increments (equivalent to £100M)
+        self.box_width = 56  # Fixed width for the formation display
+        self.position_requirements = {
+            'GK': 2,
+            'DEF': 5,
+            'MID': 5,
+            'FWD': 3
+        }
+
+    def select_initial_squad(self, gw_predictions, formation):
+        """
+        Select initial best squad without budget constraints.
+        Returns dictionary of DataFrames by position.
+        """
+        def_count, mid_count, fwd_count = formation
+        squad = {}
+        team_counts = {}
+        
+        # Sort players by predicted points within each position
+        position_players = {
+            pos: gw_predictions[gw_predictions['position'] == pos].sort_values('predicted_next_points', ascending=False)
+            for pos in ['GK', 'DEF', 'MID', 'FWD']
+        }
+        
+        # Select starting XI first
+        starting_counts = {
+            'GK': 1,
+            'DEF': def_count,
+            'MID': mid_count,
+            'FWD': fwd_count
+        }
+        
+        # Initialize squad with empty DataFrames
+        squad = {pos: pd.DataFrame() for pos in ['GK', 'DEF', 'MID', 'FWD']}
+        
+        # Select starting XI first
+        for pos, count in starting_counts.items():
+            available = position_players[pos].copy()
+            selected = []
+            
+            for _, player in available.iterrows():
+                if len(selected) >= count:
+                    break
+                    
+                team = player['team']
+                if team_counts.get(team, 0) < 3:
+                    selected.append(player)
+                    team_counts[team] = team_counts.get(team, 0) + 1
+            
+            squad[pos] = pd.concat([squad[pos], pd.DataFrame(selected)])
+        
+        # Select subs - cheaper players with moderate predictions
+        sub_counts = {
+            'GK': 1,
+            'DEF': max(0, 5 - def_count),
+            'MID': max(0, 5 - mid_count),
+            'FWD': max(0, 3 - fwd_count)
+        }
+        
+        for pos, count in sub_counts.items():
+            if count == 0:
+                continue
+                
+            available = position_players[pos]
+            # Filter out already selected players
+            available = available[~available['name'].isin(squad[pos]['name'])]
+            # Sort by value_efficiency for subs
+            available = available.sort_values('value_efficiency', ascending=False)
+            
+            selected = []
+            for _, player in available.iterrows():
+                if len(selected) >= count:
+                    break
+                    
+                team = player['team']
+                if team_counts.get(team, 0) < 3:
+                    selected.append(player)
+                    team_counts[team] = team_counts.get(team, 0) + 1
+            
+            squad[pos] = pd.concat([squad[pos], pd.DataFrame(selected)])
+        
+        return squad
+
+    def optimize_squad_budget(self, squad, gw_predictions, target_budget):
+        """
+        Optimize squad to meet budget constraints while maintaining team quality.
+        """
+        total_cost = sum(df['value'].sum() for df in squad.values())
+        if total_cost <= target_budget:
+            return squad
+
+        # Try optimizing subs first
+        starting_counts = {'GK': 1, 'DEF': 5, 'MID': 5, 'FWD': 3}
+        
+        while total_cost > target_budget:
+            # Get all players sorted by value_efficiency
+            all_players = []
+            for pos, df in squad.items():
+                is_sub = pd.Series(range(len(df))) >= starting_counts[pos]
+                df_with_sub = df.copy()
+                df_with_sub['is_sub'] = is_sub
+                all_players.extend(df_with_sub.to_dict('records'))
+            
+            # Sort by is_sub (True first) and value_efficiency (ascending)
+            all_players.sort(key=lambda x: (not x['is_sub'], x['value_efficiency']))
+            
+            replacement_made = False
+            for player in all_players:
+                pos = player['position']
+                
+                # Get replacement candidates
+                candidates = gw_predictions[
+                    (gw_predictions['position'] == pos) &
+                    (gw_predictions['value'] < player['value']) &
+                    (~gw_predictions['name'].isin(
+                        [p['name'] for p in all_players if p['position'] == pos]
+                    ))
+                ]
+                
+                if not candidates.empty:
+                    # Get team counts excluding current player
+                    team_counts = {}
+                    for p in all_players:
+                        if p['name'] != player['name']:
+                            team_counts[p['team']] = team_counts.get(p['team'], 0) + 1
+                    
+                    # Filter candidates by team constraint
+                    valid_candidates = candidates[
+                        candidates['team'].apply(lambda x: team_counts.get(x, 0) < 3)
+                    ]
+                    
+                    if not valid_candidates.empty:
+                        # Select best replacement by predicted points
+                        replacement = valid_candidates.nlargest(1, 'predicted_next_points').iloc[0]
+                        
+                        # Update squad
+                        squad[pos] = squad[pos][squad[pos]['name'] != player['name']]
+                        squad[pos] = pd.concat([squad[pos], pd.DataFrame([replacement])])
+                        
+                        total_cost = sum(df['value'].sum() for df in squad.values())
+                        replacement_made = True
+                        break
+            
+            if not replacement_made:
+                raise ValueError("Cannot optimize squad within budget constraints")
+        
+        return squad
+
+    def pick_team(self, predictions_df, season, predicted_gw):
+        """
+        Pick team using two-phase selection approach.
+        """
+        gw = predicted_gw - 1
+
+        # Filter data for the specific season and GW
+        gw_predictions = predictions_df[
+            (predictions_df['season'] == season) & 
+            (predictions_df['GW'] == gw)
+        ]
+        gw_predictions['actual_points'] = gw_predictions['actual_points'].fillna(0)
+        
+        # Print diagnostic information
+        print(f"\nDiagnostic Information for GW {predicted_gw}:")
+        for pos in ['GK', 'DEF', 'MID', 'FWD']:
+            pos_players = gw_predictions[gw_predictions['position'] == pos]
+            print(f"\n{pos} Players Available: {len(pos_players)}")
+            if len(pos_players) > 0:
+                print("Top 5 by predicted points:")
+                top_5 = pos_players.nlargest(5, 'predicted_next_points')
+                for _, player in top_5.iterrows():
+                    print(f"  {player['name']} ({player['team']}) - Points: {player['predicted_next_points']:.1f}, Price: £{player['value']/10:.1f}m")
+
+        # Try each formation
+        best_team = None
+        best_points = -1
+        best_formation = None
+        failed_formations = {}
+
+        for formation in self.valid_formations:
+            try:
+                print(f"\nTrying formation {formation}...")
+                
+                # Phase 1: Select initial squad
+                squad = self.select_initial_squad(gw_predictions, formation)
+                
+                # Calculate initial cost
+                total_cost = sum(df['value'].sum() for df in squad.values())
+                print(f"  Initial squad cost: £{total_cost/10:.1f}m")
+                
+                # Phase 2: Optimize if over budget
+                if total_cost > self.budget_limit:
+                    print(f"  Squad over budget, optimizing...")
+                    squad = self.optimize_squad_budget(squad, gw_predictions, self.budget_limit)
+                    total_cost = sum(df['value'].sum() for df in squad.values())
+                    print(f"  Optimized squad cost: £{total_cost/10:.1f}m")
+                
+                # Calculate total points for starting XI
+                def_count, mid_count, fwd_count = formation
+                starting_xi_points = (
+                    squad['GK'].nlargest(1, 'predicted_next_points')['predicted_next_points'].sum() +
+                    squad['DEF'].nlargest(def_count, 'predicted_next_points')['predicted_next_points'].sum() +
+                    squad['MID'].nlargest(mid_count, 'predicted_next_points')['predicted_next_points'].sum() +
+                    squad['FWD'].nlargest(fwd_count, 'predicted_next_points')['predicted_next_points'].sum()
+                )
+                
+                print(f"  Starting XI points: {starting_xi_points:.1f}")
+                
+                if starting_xi_points > best_points:
+                    best_team = squad
+                    best_points = starting_xi_points
+                    best_formation = formation
+                    print("  Success: New best team found!")
+
+            except Exception as e:
+                failed_formations[formation] = str(e)
+                print(f"  Failed: {str(e)}")
+
+        if best_team is None:
+            print("\nFormation attempt results:")
+            for formation, reason in failed_formations.items():
+                print(f"Formation {formation}: Failed - {reason}")
+            raise ValueError(f"Could not create a valid team for gameweek {gw}. See above diagnostic information.")
+
+        # Select captain and vice-captain
+        try:
+            all_players = pd.concat(best_team.values())
+            captain_score = lambda x: x.predicted_next_points * x.selected * x.points_ewm_3 * x.points_ewm_6
+            
+            # Sort players by captain score
+            captain_candidates = all_players.copy()
+            captain_candidates['captain_score'] = captain_candidates.apply(captain_score, axis=1)
+            captain_candidates = captain_candidates.sort_values('captain_score', ascending=False)
+            
+            # Select captain and vice-captain
+            captain = captain_candidates.iloc[0]
+            vice_captain = captain_candidates.iloc[1]
+            
+            captain_name = captain.name
+            vice_captain_name = vice_captain.name
+        except Exception as e:
+            raise ValueError(f"Error selecting captain and vice-captain: {str(e)}")
+
+        print(f"Captain: {captain_name}")
+        print(f"Vice Captain: {vice_captain_name}")
+
+        try:
+            # Apply automatic substitutions
+            best_team, sub_log = self.apply_autosubs(
+                best_team, 
+                best_formation,
+                captain_name,
+                vice_captain_name,
+                predicted_gw
+            )
+            
+            # Print final squad with substitutions
+            output, actual_points_xi = self._print_squad(
+                best_team, 
+                best_formation, 
+                captain_name,
+                vice_captain_name,
+                season, 
+                gw,
+                sub_log
+            )
+            self.save_formation_to_file(output, season, gw)
+        except Exception as e:
+            raise ValueError(f"Error printing squad: {str(e)}")
+
+        return best_team, output, actual_points_xi
+
+    def apply_autosubs(self, squad, formation, captain_name, vice_captain_name, predicted_gw):
+        """
+        Apply automatic substitutions based on minutes played in next gameweek.
+        
+        Args:
+            squad (dict): Current squad by position
+            formation (tuple): Current formation (def, mid, fwd)
+            captain_name (str): Name of team captain
+            vice_captain_name (str): Name of vice captain
+            predicted_gw (int): The gameweek being predicted
+            
+        Returns:
+            dict: Updated squad after substitutions
+            list: Substitution log
+        """
+        sub_log = []
+        updated_squad = {pos: df.copy() for pos, df in squad.items()}
+        
+        def_count, mid_count, fwd_count = formation
+        starting_counts = {'GK': 1, 'DEF': def_count, 'MID': mid_count, 'FWD': fwd_count}
+        
+        # Check starting XI for players with 0 minutes
+        for pos, count in starting_counts.items():
+            starters = updated_squad[pos].head(count)
+            for idx, player in starters.iterrows():
+                if player['minutes_next'] == 0:
+                    # Try to find valid substitute
+                    sub_found = self._find_substitute(
+                        updated_squad,
+                        pos,
+                        idx,
+                        formation,
+                        starting_counts,
+                        player,
+                        sub_log
+                    )
+                    
+                    if not sub_found and player['name'] == captain_name:
+                        # Captain didn't play, switch to vice captain
+                        self._apply_vice_captain(updated_squad, vice_captain_name, sub_log)
+        
+        return updated_squad, sub_log
+
+    def _find_substitute(self, squad, position, starter_idx, formation, starting_counts, player, sub_log):
+        """Find valid substitute maintaining formation rules"""
+        def_count, mid_count, fwd_count = formation
+        
+        # Get available subs for this position
+        subs = squad[position].iloc[starting_counts[position]:]
+        
+        if position == 'GK':
+            # Goalkeeper can only be replaced by substitute goalkeeper
+            if not subs.empty:
+                sub_player = subs.iloc[0]
+                if sub_player['minutes_next'] > 0:
+                    self._execute_substitution(squad, position, starter_idx, len(squad[position])-1, sub_log)
+                    return True
+            return False
+        
+        # For outfield players, try each sub in order
+        for sub_idx, sub in subs.iterrows():
+            if sub['minutes_next'] > 0:
+                # Check if substitution maintains valid formation
+                if self._validate_formation_after_sub(squad, position, formation, starter_idx, sub_idx):
+                    self._execute_substitution(squad, position, starter_idx, sub_idx, sub_log)
+                    return True
+        
+        sub_log.append(f"No valid substitute found for {player['name']} (0 mins) - Formation constraints")
+        return False
+
+    def _validate_formation_after_sub(self, squad, position, formation, starter_idx, sub_idx):
+        """Check if substitution would result in valid formation"""
+        def_count, mid_count, fwd_count = formation
+        
+        # Simulate substitution
+        temp_squad = {pos: df.copy() for pos, df in squad.items()}
+        starter = temp_squad[position].iloc[starter_idx]
+        sub = temp_squad[position].iloc[sub_idx]
+        
+        # Swap players
+        temp_squad[position].iloc[starter_idx] = sub
+        temp_squad[position].iloc[sub_idx] = starter
+        
+        # Count players with minutes in each position
+        playing_def = sum(1 for _, p in temp_squad['DEF'].head(def_count).iterrows() if p['minutes_next'] > 0)
+        playing_mid = sum(1 for _, p in temp_squad['MID'].head(mid_count).iterrows() if p['minutes_next'] > 0)
+        playing_fwd = sum(1 for _, p in temp_squad['FWD'].head(fwd_count).iterrows() if p['minutes_next'] > 0)
+        
+        # Check formation validity
+        if playing_def < 3:  # Must have at least 3 defenders
+            return False
+        
+        if playing_fwd < 1:  # Must have at least 1 forward
+            return False
+        
+        # Check if resulting formation is valid
+        return (playing_def, playing_mid, playing_fwd) in self.valid_formations
+
+    def _execute_substitution(self, squad, position, starter_idx, sub_idx, sub_log):
+        """Execute the substitution and log it"""
+        starter = squad[position].iloc[starter_idx]
+        sub = squad[position].iloc[sub_idx]
+        
+        # Swap players
+        squad[position].iloc[starter_idx] = sub
+        squad[position].iloc[sub_idx] = starter
+        
+        # Log substitution
+        sub_log.append(
+            f"SUB: {starter['name']} (0 mins) -> {sub['name']} ({int(sub['actual_points'])} pts)"
+        )
+
+    def _apply_vice_captain(self, squad, vice_captain_name, sub_log):
+        """Apply vice captain if captain didn't play"""
+        # Find vice captain and double their points
+        for pos in squad:
+            mask = squad[pos]['name'] == vice_captain_name
+            if mask.any():
+                squad[pos].loc[mask, 'actual_points'] *= 2
+                sub_log.append(f"Captain didn't play - Vice captain {vice_captain_name} points doubled")
+                break
+
+    def _print_squad(self, full_squad, formation, captain_name, vice_captain_name, season, gw, sub_log):
+        """
+        Print and format the squad details including formation layout and substitutions.
+        """
+        output = []
+        output.append(f"FPLManager predicted picks for gw {gw+1} season {season}:")
+        output.append("")
+        
+        # Initialize tracking variables
+        squad_table = []
+        predicted_points_xi = 0
+        actual_points_xi = 0
+        total_cost = 0
+        
+        # Prepare position counts for starting XI
+        def_count, mid_count, fwd_count = formation
+        starting_xi_counts = {'GK': 1, 'DEF': def_count, 'MID': mid_count, 'FWD': fwd_count}
+        
+        # Create squad table
+        for position, players in full_squad.items():
+            players_df = players.reset_index(drop=True)
+            for idx, player in players_df.iterrows():
+                # Add captain/vice-captain markers to name
+                player_name = player['name']
+                if player_name == captain_name:
+                    player_name += " (C)"
+                elif player_name == vice_captain_name:
+                    player_name += " (VC)"
+                
+                prediction_range = f"{player['predicted_next_points']:.1f} ({player['confidence_lower']:.1f}-{player['confidence_upper']:.1f})"
+                actual_points = int(player.get('actual_points', 0))
+                
+                total_cost += player['value'] / 10
+                
+                is_in_starting_xi = idx < starting_xi_counts.get(position, 0)
+                if is_in_starting_xi:
+                    predicted_points_xi += player['predicted_next_points']
+                    actual_points_xi += actual_points
+                
+                squad_table.append([
+                    player_name,
+                    player['team'],
+                    prediction_range,
+                    actual_points,
+                    f"{player['confidence_score']:.2f}",
+                    f"{player['value'] / 10:.1f}"
+                ])
+
+        # Add squad table to output
+        headers = ['Name', 'Team', 'Prediction Range', 'Actual Points', 'Confidence Score', 'Price']
+        output.append(tabulate(squad_table, headers=headers, tablefmt='pipe', floatfmt='.2f'))
+        output.append(f"\nCaptain: {captain_name}")
+        output.append(f"Vice Captain: {vice_captain_name}")
+        
+        def format_row(players_df, count, position_type='players'):
+            """Helper function to format each row of the formation"""
+            box_width = 14  # Width of each player box
+            max_formation_width = 56  # Maximum width of the formation display
+            
+            total_width = (box_width * count) + (count - 1)
+            left_margin = (max_formation_width - total_width) // 2
+            margin = " " * left_margin
+            
+            separator = "=" * box_width
+            separator_line = margin
+            for i in range(count):
+                separator_line += separator
+                if i < count - 1:
+                    separator_line += "="
+            
+            if position_type in ['top', 'bottom']:
+                return [separator_line]
+                
+            names_row = margin
+            points_row = margin
+            
+            players_df = players_df.reset_index(drop=True)
+            for i in range(count):
+                player = players_df.iloc[i]
+                name = player['name'][:10].center(12)
+                points = str(int(player.get('actual_points', 0)))
+                
+                # Add captain/vice-captain markers
+                if player['name'] == captain_name:
+                    points += " (C)"
+                elif player['name'] == vice_captain_name:
+                    points += " (VC)"
+                
+                points = points.center(12)
+                
+                names_row += f"|{name}|"
+                points_row += f"|{points}|"
+                
+                if i < count - 1:
+                    names_row += ""
+                    points_row += ""
+            
+            return [names_row, points_row, separator_line]
+        
+            # Print formation layout
+        output.append("\nFormation Layout:")
+        
+        # Goalkeeper
+        gk_df = full_squad['GK'].reset_index(drop=True)
+        gk_lines = format_row(gk_df, 1, 'top')
+        output.extend(gk_lines)
+        gk_lines = format_row(gk_df, 1)
+        output.extend(gk_lines)
+        
+        # Defenders
+        def_df = full_squad['DEF'].reset_index(drop=True)
+        def_lines = format_row(def_df, def_count, 'top')
+        output.extend(def_lines)
+        def_lines = format_row(def_df, def_count)
+        output.extend(def_lines)
+        
+        # Midfielders
+        mid_df = full_squad['MID'].reset_index(drop=True)
+        mid_lines = format_row(mid_df, mid_count, 'top')
+        output.extend(mid_lines)
+        mid_lines = format_row(mid_df, mid_count)
+        output.extend(mid_lines)
+        
+        # Forwards
+        fwd_df = full_squad['FWD'].reset_index(drop=True)
+        fwd_lines = format_row(fwd_df, fwd_count, 'top')
+        output.extend(fwd_lines)
+        fwd_lines = format_row(fwd_df, fwd_count)
+        output.extend(fwd_lines)
+        fwd_lines = format_row(fwd_df, fwd_count, 'bottom')
+        output.extend(fwd_lines)
+        
+        # Add Substitutions section if any subs were made
+        if sub_log:
+            output.append("\nSubstitutions Made:")
+            for sub in sub_log:
+                output.append(sub)
+        
+        # Substitutes section
+        output.append("\nSubs:")
+        
+        # Collect all subs
+        subs_df = pd.DataFrame()
+        for position in ['GK', 'DEF', 'MID', 'FWD']:
+            if position in starting_xi_counts:
+                players_df = full_squad[position].reset_index(drop=True)
+                if len(players_df) > starting_xi_counts[position]:
+                    subs_df = pd.concat([subs_df, players_df.iloc[starting_xi_counts[position]:]])
+        
+        if not subs_df.empty:
+            subs_df = subs_df.reset_index(drop=True)
+            subs_lines = format_row(subs_df, len(subs_df), 'top')
+            output.extend(subs_lines)
+            subs_lines = format_row(subs_df, len(subs_df))
+            output.extend(subs_lines)
+            subs_lines = format_row(subs_df, len(subs_df), 'bottom')
+            output.extend(subs_lines)
+        
+        # Add summary statistics
+        output.append(f"\nTotal Team Cost = £{total_cost:.1f}m")
+        output.append(f"Total Team Points = {int(actual_points_xi)}")
+        
+        # Print and return output
+        print("\n".join(output))
+        return output, actual_points_xi
+
+    def save_formation_to_file(self, output, season, gw):
+        """
+        Save the formation output to a text file with UTF-8 encoding.
+        
+        Args:
+            filename (str): Base filename
+            output (list): The list of strings containing the formation output
+            gw (int): Gameweek number
+            season (str): Season identifier
+        """
+        
+        # Create directory if it doesn't exist
+        save_path = os.path.join('Results', 'Reports', 'Formations')
+        os.makedirs(save_path, exist_ok=True)
+        
+        # Create filename with gameweek and season
+        full_filename = os.path.join(save_path, f'gw{gw+1}_season{season}_formation.txt')
+        
+        # Save the formation output
+        with open(full_filename, 'w', encoding='utf-8') as f:
+            f.write('\n'.join(output))

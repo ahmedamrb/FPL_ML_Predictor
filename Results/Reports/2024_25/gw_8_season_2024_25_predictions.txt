@@ -1,0 +1,111 @@
+--------------------------------------------------------------------------------
+
+
+Top 5 Predicted Performers for GW 8 Season 2024_25
+Generated on: 2025-02-26 21:51:07
+
+
+GK:
+| name            | team          | prediction_range   |   actual_points |   confidence_score |   price |
+|:----------------|:--------------|:-------------------|----------------:|-------------------:|--------:|
+| André Onana     | Man Utd       | 4.0 (2.7-5.4)      |               2 |               0.54 |    5.00 |
+| Jordan Pickford | Everton       | 3.9 (2.6-5.3)      |               6 |               0.50 |    4.80 |
+| Matz Sels       | Nott'm Forest | 3.8 (2.5-5.2)      |              11 |               0.54 |    4.50 |
+| Aaron Ramsdale  | Southampton   | 3.7 (2.4-5.0)      |               1 |               0.56 |    4.40 |
+| Mads Hermansen  | Leicester     | 3.5 (2.1-4.8)      |               3 |               0.63 |    4.50 |
+
+Position Insights (GK):
+- Average Predicted Points: 3.79
+- Average Confidence Score: 0.56
+- Total Actual Points: 23.00
+- Combined Price: £23.2m
+
+Season Statistics for Selected Players (Up to GW7):
+| Name            |   Games |   Clean Sheets |   Total Saves |   Saves/Game |
+|:----------------|--------:|---------------:|--------------:|-------------:|
+| André Onana     |       7 |              4 |            19 |          2.7 |
+| Jordan Pickford |       7 |              1 |            20 |          2.9 |
+| Matz Sels       |       7 |              2 |            19 |          2.7 |
+| Aaron Ramsdale  |       7 |              0 |            22 |          3.1 |
+| Mads Hermansen  |       7 |              1 |            33 |          4.7 |
+
+
+DEF:
+| name                         | team      | prediction_range   |   actual_points |   confidence_score |   price |
+|:-----------------------------|:----------|:-------------------|----------------:|-------------------:|--------:|
+| Gabriel dos Santos Magalhães | Arsenal   | 3.9 (1.6-6.1)      |               1 |               0.47 |    6.20 |
+| Virgil van Dijk              | Liverpool | 3.7 (1.4-5.9)      |               2 |               0.52 |    6.00 |
+| Jacob Greaves                | Ipswich   | 3.6 (1.4-5.9)      |               0 |               0.56 |    4.10 |
+| Cristian Romero              | Spurs     | 3.6 (1.4-5.8)      |               2 |               0.50 |    5.10 |
+| Leif Davis                   | Ipswich   | 3.5 (1.3-5.7)      |               1 |               0.51 |    4.50 |
+
+Position Insights (DEF):
+- Average Predicted Points: 3.66
+- Average Confidence Score: 0.51
+- Total Actual Points: 6.00
+- Combined Price: £25.9m
+
+Season Statistics for Selected Players (Up to GW7):
+| Name                         |   Games |   Clean Sheets |   Goals |   Assists |
+|:-----------------------------|--------:|---------------:|--------:|----------:|
+| Gabriel dos Santos Magalhães |       7 |              3 |       2 |         0 |
+| Virgil van Dijk              |       7 |              5 |       0 |         0 |
+| Jacob Greaves                |       7 |              1 |       0 |         0 |
+| Cristian Romero              |       7 |              2 |       1 |         0 |
+| Leif Davis                   |       7 |              1 |       0 |         1 |
+
+
+MID:
+| name          | team      | prediction_range   |   actual_points |   confidence_score |   price |
+|:--------------|:----------|:-------------------|----------------:|-------------------:|--------:|
+| Cole Palmer   | Chelsea   | 7.4 (5.2-9.5)      |               2 |               0.52 |   10.70 |
+| Mohamed Salah | Liverpool | 6.9 (4.7-9.0)      |              12 |               0.49 |   12.70 |
+| Dwight McNeil | Everton   | 4.8 (2.7-7.0)      |               6 |               0.50 |    5.60 |
+| Bryan Mbeumo  | Brentford | 4.6 (2.5-6.8)      |               2 |               0.45 |    7.40 |
+| Phil Foden    | Man City  | 4.6 (2.5-6.7)      |               4 |               0.47 |    9.20 |
+
+Position Insights (MID):
+- Average Predicted Points: 5.66
+- Average Confidence Score: 0.48
+- Total Actual Points: 26.00
+- Combined Price: £45.6m
+
+Season Statistics for Selected Players (Up to GW7):
+| Name          |   Games |   Goals |   Assists |   Avg ICT |   Points/Game |
+|:--------------|--------:|--------:|----------:|----------:|--------------:|
+| Cole Palmer   |       7 |       6 |         5 |      12.4 |           9.6 |
+| Mohamed Salah |       7 |       4 |         4 |      12.3 |           8.9 |
+| Dwight McNeil |       7 |       3 |         2 |       9.7 |           5.9 |
+| Bryan Mbeumo  |       7 |       6 |         0 |      10.1 |           7.3 |
+| Phil Foden    |       7 |       0 |         0 |       2.3 |           0.7 |
+
+
+FWD:
+| name            | team          | prediction_range   |   actual_points |   confidence_score |   price |
+|:----------------|:--------------|:-------------------|----------------:|-------------------:|--------:|
+| Erling Haaland  | Man City      | 7.3 (5.4-9.2)      |               2 |               0.56 |   15.40 |
+| Ollie Watkins   | Aston Villa   | 5.4 (3.5-7.3)      |               8 |               0.52 |    9.10 |
+| Chris Wood      | Nott'm Forest | 5.2 (3.3-7.1)      |               7 |               0.51 |    6.20 |
+| Michail Antonio | West Ham      | 5.1 (3.2-7.1)      |               2 |               0.54 |    5.40 |
+| Liam Delap      | Ipswich       | 4.6 (2.7-6.5)      |               2 |               0.51 |    5.60 |
+
+Position Insights (FWD):
+- Average Predicted Points: 5.52
+- Average Confidence Score: 0.53
+- Total Actual Points: 21.00
+- Combined Price: £41.7m
+
+Season Statistics for Selected Players (Up to GW7):
+| Name            |   Games |   Goals |   Assists |   Avg ICT |   Points/Game |
+|:----------------|--------:|--------:|----------:|----------:|--------------:|
+| Erling Haaland  |       7 |      10 |         0 |      13.1 |           9.6 |
+| Ollie Watkins   |       7 |       4 |         2 |       6.9 |           5.9 |
+| Chris Wood      |       7 |       4 |         0 |       5.7 |           5.6 |
+| Michail Antonio |       7 |       1 |         4 |       3.3 |           4.3 |
+| Liam Delap      |       7 |       4 |         0 |       5.2 |           4.4 |
+
+
+Predicted Gameweek 8 Summary:
+Total Actual Points Across All Positions: 76
+
+--------------------------------------------------------------------------------
